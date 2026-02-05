@@ -1,0 +1,189 @@
+[gd_resource type="TileSet" load_steps=21 format=3 uid="uid://cewbfmsiihwgr"]
+
+[ext_resource type="Texture2D" uid="uid://cbuo6rtwdnf0l" path="res://files/images/Tilesets/Castle.png" id="1_8l35j"]
+[ext_resource type="Texture2D" uid="uid://cwycclyxkgtct" path="res://files/images/Tilesets/mushroom_platform.png" id="1_insue"]
+[ext_resource type="PackedScene" uid="uid://cnnnrsmj5p1nu" path="res://Scenes/coin_floating_1.tscn" id="2_67wah"]
+[ext_resource type="Texture2D" uid="uid://drwcbuek0hgfj" path="res://files/images/question_block_strip2.png" id="2_yksxy"]
+[ext_resource type="Texture2D" uid="uid://8bmqiu6uyrmj" path="res://files/images/gnd_red_1.bmp" id="3_8l35j"]
+[ext_resource type="Texture2D" uid="uid://ddbtpn7bpyp3o" path="res://files/images/gnd_red2.bmp" id="4_yksxy"]
+[ext_resource type="Texture2D" uid="uid://cemkpyra8tw44" path="res://files/images/Tilesets/Clouds.png" id="5_51uma"]
+[ext_resource type="Texture2D" uid="uid://dimjpfuq14e7n" path="res://files/images/Tilesets/Ver_pipe4.png" id="6_j4k8g"]
+[ext_resource type="Texture2D" uid="uid://dq0p0bpsbvtgp" path="res://files/images/blockq_used.png" id="8_51uma"]
+[ext_resource type="Texture2D" uid="uid://eksabeh4efbu" path="res://files/images/invisible_tile.png" id="9_j4k8g"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_51uma"]
+texture = ExtResource("1_8l35j")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrains_peering_bit/right_side = 3
+0:0/0/terrains_peering_bit/bottom_right_corner = 3
+0:0/0/terrains_peering_bit/bottom_left_corner = 3
+0:0/0/terrains_peering_bit/left_side = 3
+0:0/0/terrains_peering_bit/top_left_corner = 3
+0:0/0/terrains_peering_bit/top_right_corner = 3
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrains_peering_bit/top_side = 3
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrains_peering_bit/bottom_side = 3
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/terrains_peering_bit/right_side = 3
+3:0/0/terrains_peering_bit/bottom_right_corner = 3
+3:0/0/terrains_peering_bit/top_right_corner = 3
+4:0/0 = 0
+4:0/0/terrain_set = 0
+4:0/0/terrains_peering_bit/bottom_left_corner = 3
+4:0/0/terrains_peering_bit/left_side = 3
+4:0/0/terrains_peering_bit/top_left_corner = 3
+5:0/0 = 0
+5:0/0/terrain_set = 0
+5:0/0/terrains_peering_bit/right_side = 3
+5:0/0/terrains_peering_bit/left_side = 3
+6:0/0 = 0
+6:0/0/terrain_set = 0
+6:0/0/terrains_peering_bit/right_side = 3
+6:0/0/terrains_peering_bit/left_side = 3
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j4k8g"]
+texture = ExtResource("2_yksxy")
+texture_region_size = Vector2i(32, 32)
+0:0/animation_columns = 2
+0:0/animation_speed = 5.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jdtpx"]
+texture = ExtResource("1_insue")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0/terrains_peering_bit/right_side = 2
+2:0/0/terrains_peering_bit/bottom_right_corner = 2
+2:0/0/terrains_peering_bit/bottom_left_corner = 2
+2:0/0/terrains_peering_bit/left_side = 2
+2:0/0/terrains_peering_bit/top_left_corner = 2
+2:0/0/terrains_peering_bit/top_right_corner = 2
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:0/0/terrains_peering_bit/right_side = 2
+3:0/0/terrains_peering_bit/bottom_right_corner = 2
+3:0/0/terrains_peering_bit/top_right_corner = 2
+4:0/0 = 0
+4:0/0/terrain_set = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:0/0/terrains_peering_bit/bottom_left_corner = 2
+4:0/0/terrains_peering_bit/left_side = 2
+4:0/0/terrains_peering_bit/top_left_corner = 2
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_x4j73"]
+scenes/1/scene = ExtResource("2_67wah")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tgalb"]
+texture = ExtResource("3_8l35j")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r28so"]
+texture = ExtResource("4_yksxy")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tc2ei"]
+texture = ExtResource("5_51uma")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrains_peering_bit/bottom_right_corner = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrains_peering_bit/bottom_right_corner = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0/terrains_peering_bit/bottom_left_corner = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrains_peering_bit/bottom_left_corner = 0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrains_peering_bit/top_right_corner = 0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrains_peering_bit/top_left_corner = 0
+1:1/0/terrains_peering_bit/top_side = 0
+1:1/0/terrains_peering_bit/top_right_corner = 0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrains_peering_bit/top_left_corner = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3he50"]
+texture = ExtResource("8_51uma")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7em5l"]
+texture = ExtResource("9_j4k8g")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mxh23"]
+texture = ExtResource("6_j4k8g")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:0/0/terrains_peering_bit/right_side = 1
+0:0/0/terrains_peering_bit/bottom_right_corner = 1
+0:0/0/terrains_peering_bit/top_right_corner = 1
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0/terrains_peering_bit/bottom_right_corner = 1
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0/terrains_peering_bit/bottom_left_corner = 1
+2:0/0/terrains_peering_bit/left_side = 1
+2:0/0/terrains_peering_bit/top_left_corner = 1
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:0/0/terrains_peering_bit/bottom_left_corner = 1
+
+[resource]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 0
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Clouds"
+terrain_set_0/terrain_0/color = Color(0, 0, 0, 1)
+terrain_set_0/terrain_1/name = "Pipe"
+terrain_set_0/terrain_1/color = Color(0.215286, 0.516479, 0.251649, 1)
+terrain_set_0/terrain_2/name = "Platform"
+terrain_set_0/terrain_2/color = Color(0.651247, 0.0119632, 0.91194, 1)
+terrain_set_0/terrain_3/name = "Castle"
+terrain_set_0/terrain_3/color = Color(0.375, 0.5, 0.25, 1)
+sources/2 = SubResource("TileSetAtlasSource_tgalb")
+sources/3 = SubResource("TileSetAtlasSource_r28so")
+sources/4 = SubResource("TileSetAtlasSource_tc2ei")
+sources/9 = SubResource("TileSetAtlasSource_mxh23")
+sources/15 = SubResource("TileSetAtlasSource_jdtpx")
+sources/16 = SubResource("TileSetScenesCollectionSource_x4j73")
+sources/0 = SubResource("TileSetAtlasSource_51uma")
+sources/1 = SubResource("TileSetAtlasSource_j4k8g")
+sources/5 = SubResource("TileSetAtlasSource_3he50")
+sources/6 = SubResource("TileSetAtlasSource_7em5l")
+tile_proxies/coords_level = [[5, Vector2i(0, 0)], [9, Vector2i(0, 0)], [6, Vector2i(0, 0)], [9, Vector2i(1, 0)], [7, Vector2i(0, 0)], [9, Vector2i(2, 0)], [8, Vector2i(0, 0)], [9, Vector2i(3, 0)], [10, Vector2i(0, 0)], [15, Vector2i(0, 0)], [11, Vector2i(0, 0)], [15, Vector2i(1, 0)], [12, Vector2i(0, 0)], [15, Vector2i(2, 0)], [13, Vector2i(0, 0)], [15, Vector2i(3, 0)], [14, Vector2i(0, 0)], [15, Vector2i(4, 0)]]

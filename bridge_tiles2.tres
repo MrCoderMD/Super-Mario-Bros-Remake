@@ -1,0 +1,138 @@
+[gd_resource type="TileSet" load_steps=16 format=3 uid="uid://bmpmcyh1liim1"]
+
+[ext_resource type="Texture2D" uid="uid://dbts2homd1ltv" path="res://files/images/Tilesets/gray_platform.png" id="1_of0df"]
+[ext_resource type="PackedScene" uid="uid://cnnnrsmj5p1nu" path="res://Scenes/coin_floating_1.tscn" id="2_eoamq"]
+[ext_resource type="PackedScene" uid="uid://dghjt5ewgyk6x" path="res://Scenes/spring.tscn" id="4_h2ipe"]
+[ext_resource type="Texture2D" uid="uid://w7fk4imu5llh" path="res://files/images/Tilesets/Clouds1.png" id="5_4x67g"]
+[ext_resource type="Texture2D" uid="uid://drwcbuek0hgfj" path="res://files/images/question_block_strip2.png" id="6_ygku0"]
+[ext_resource type="Texture2D" uid="uid://bs6o8exi35ey2" path="res://files/images/Tilesets/Castle1.png" id="7_l7l6o"]
+[ext_resource type="Texture2D" uid="uid://wy23g1gcm6ly" path="res://files/images/gnd2.png" id="8_r6mwx"]
+[ext_resource type="Texture2D" uid="uid://bjor3qwipxei3" path="res://files/images/gnd2_2.png" id="9_eshhe"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7b3w"]
+texture = ExtResource("1_of0df")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:0/0/terrains_peering_bit/right_side = 2
+0:0/0/terrains_peering_bit/bottom_right_corner = 2
+0:0/0/terrains_peering_bit/top_right_corner = 2
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0/terrains_peering_bit/right_side = 2
+1:0/0/terrains_peering_bit/bottom_right_corner = 2
+1:0/0/terrains_peering_bit/bottom_left_corner = 2
+1:0/0/terrains_peering_bit/left_side = 2
+1:0/0/terrains_peering_bit/top_left_corner = 2
+1:0/0/terrains_peering_bit/top_right_corner = 2
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0/terrains_peering_bit/bottom_left_corner = 2
+2:0/0/terrains_peering_bit/left_side = 2
+2:0/0/terrains_peering_bit/top_left_corner = 2
+3:0/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_shuj5"]
+scenes/1/scene = ExtResource("2_eoamq")
+scenes/3/scene = ExtResource("4_h2ipe")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_50wnc"]
+texture = ExtResource("5_4x67g")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrains_peering_bit/bottom_right_corner = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrains_peering_bit/bottom_right_corner = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0/terrains_peering_bit/bottom_left_corner = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrains_peering_bit/bottom_left_corner = 0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrains_peering_bit/top_right_corner = 0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrains_peering_bit/top_left_corner = 0
+1:1/0/terrains_peering_bit/top_side = 0
+1:1/0/terrains_peering_bit/top_right_corner = 0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrains_peering_bit/top_left_corner = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wyfgw"]
+texture = ExtResource("6_ygku0")
+texture_region_size = Vector2i(32, 32)
+0:0/animation_columns = 2
+0:0/animation_speed = 5.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mq3ht"]
+texture = ExtResource("7_l7l6o")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrains_peering_bit/right_side = 1
+0:0/0/terrains_peering_bit/bottom_right_corner = 1
+0:0/0/terrains_peering_bit/bottom_left_corner = 1
+0:0/0/terrains_peering_bit/left_side = 1
+0:0/0/terrains_peering_bit/top_left_corner = 1
+0:0/0/terrains_peering_bit/top_right_corner = 1
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrains_peering_bit/top_side = 1
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrains_peering_bit/bottom_side = 1
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/terrains_peering_bit/right_side = 1
+3:0/0/terrains_peering_bit/bottom_right_corner = 1
+3:0/0/terrains_peering_bit/top_right_corner = 1
+4:0/0 = 0
+4:0/0/terrain_set = 0
+4:0/0/terrains_peering_bit/bottom_left_corner = 1
+4:0/0/terrains_peering_bit/left_side = 1
+4:0/0/terrains_peering_bit/top_left_corner = 1
+5:0/0 = 0
+6:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fh4mc"]
+texture = ExtResource("8_r6mwx")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k2cgp"]
+texture = ExtResource("9_eshhe")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[resource]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 0
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Clouds"
+terrain_set_0/terrain_0/color = Color(0, 0, 0, 1)
+terrain_set_0/terrain_1/name = "Castle"
+terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
+terrain_set_0/terrain_2/name = "Platform"
+terrain_set_0/terrain_2/color = Color(0.46875, 0.5, 0.25, 1)
+sources/7 = SubResource("TileSetAtlasSource_mq3ht")
+sources/8 = SubResource("TileSetAtlasSource_fh4mc")
+sources/9 = SubResource("TileSetAtlasSource_k2cgp")
+sources/16 = SubResource("TileSetAtlasSource_j7b3w")
+sources/17 = SubResource("TileSetScenesCollectionSource_shuj5")
+sources/25 = SubResource("TileSetAtlasSource_50wnc")
+sources/26 = SubResource("TileSetAtlasSource_wyfgw")
+tile_proxies/coords_level = [[0, Vector2i(0, 0)], [7, Vector2i(0, 0)], [1, Vector2i(0, 0)], [7, Vector2i(1, 0)], [2, Vector2i(0, 0)], [7, Vector2i(2, 0)], [3, Vector2i(0, 0)], [7, Vector2i(3, 0)], [4, Vector2i(0, 0)], [7, Vector2i(4, 0)], [5, Vector2i(0, 0)], [7, Vector2i(5, 0)], [6, Vector2i(0, 0)], [7, Vector2i(6, 0)], [11, Vector2i(0, 0)], [16, Vector2i(0, 0)], [12, Vector2i(0, 0)], [16, Vector2i(1, 0)], [13, Vector2i(0, 0)], [16, Vector2i(2, 0)], [15, Vector2i(0, 0)], [16, Vector2i(3, 0)], [18, Vector2i(0, 0)], [25, Vector2i(0, 0)], [19, Vector2i(0, 0)], [25, Vector2i(1, 0)], [20, Vector2i(0, 0)], [25, Vector2i(2, 0)], [21, Vector2i(0, 0)], [25, Vector2i(0, 1)], [22, Vector2i(0, 0)], [25, Vector2i(1, 1)], [23, Vector2i(0, 0)], [25, Vector2i(2, 1)]]

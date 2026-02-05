@@ -1,0 +1,44 @@
+[gd_resource type="TileSet" load_steps=10 format=3 uid="uid://burqwbbfkaihs"]
+
+[ext_resource type="PackedScene" uid="uid://dks3j3n3s82wq" path="res://Scenes/goomba.tscn" id="1_qwv0l"]
+[ext_resource type="PackedScene" uid="uid://bkvih37u1majc" path="res://Scenes/koopa.tscn" id="2_pj1o4"]
+[ext_resource type="PackedScene" uid="uid://khudxbcamq6e" path="res://Scenes/plant.tscn" id="3_pvdro"]
+[ext_resource type="PackedScene" uid="uid://bt8hs85yc7ong" path="res://Scenes/bullet_bill_canon.tscn" id="4_5m5y4"]
+[ext_resource type="PackedScene" uid="uid://dbxrfdi5dk4lt" path="res://Scenes/hammer_bro.tscn" id="5_u85jq"]
+[ext_resource type="PackedScene" uid="uid://bfwn2l6oqhdt8" path="res://Scenes/beetle.tscn" id="6_bpngf"]
+[ext_resource type="Texture2D" uid="uid://dhesa0e0a5xy4" path="res://files/images/Tilesets/b.png" id="7_sj4y0"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_74yis"]
+scenes/1/scene = ExtResource("1_qwv0l")
+scenes/2/scene = ExtResource("2_pj1o4")
+scenes/3/scene = ExtResource("3_pvdro")
+scenes/4/scene = ExtResource("4_5m5y4")
+scenes/5/scene = ExtResource("5_u85jq")
+scenes/6/scene = ExtResource("6_bpngf")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y7gmm"]
+texture = ExtResource("7_sj4y0")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:0/0/terrains_peering_bit/top_left_corner = 0
+0:0/0/terrains_peering_bit/top_side = 0
+0:0/0/terrains_peering_bit/top_right_corner = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0/terrains_peering_bit/bottom_right_corner = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0/terrains_peering_bit/bottom_left_corner = 0
+
+[resource]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 0
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Stand"
+terrain_set_0/terrain_0/color = Color(1, 1, 1, 1)
+sources/0 = SubResource("TileSetScenesCollectionSource_74yis")
+sources/3 = SubResource("TileSetAtlasSource_y7gmm")
+tile_proxies/coords_level = [[1, Vector2i(0, 0)], [3, Vector2i(0, 0)], [2, Vector2i(0, 0)], [3, Vector2i(1, 0)]]

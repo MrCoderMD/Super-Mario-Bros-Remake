@@ -1,0 +1,42 @@
+[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://ddd3yqglssmnd"]
+
+[ext_resource type="Texture2D" uid="uid://4tmk3mvihti1" path="res://files/images/uw_0.png" id="1_j0hpm"]
+[ext_resource type="Texture2D" uid="uid://wh5bfcts5qir" path="res://files/images/uw_1.png" id="2_7bn7s"]
+[ext_resource type="PackedScene" uid="uid://cnnnrsmj5p1nu" path="res://Scenes/coin_floating_1.tscn" id="3_7bn7s"]
+[ext_resource type="Texture2D" uid="uid://yf6cmi715uf4" path="res://files/images/pipe_hor_bot_left.png" id="4_drq8u"]
+[ext_resource type="Texture2D" uid="uid://kbtyvsoi634j" path="res://files/images/pipe_hor_top_left.png" id="5_x8lph"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uaghm"]
+texture = ExtResource("1_j0hpm")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0tm2"]
+texture = ExtResource("2_7bn7s")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_tmtwp"]
+scenes/1/scene = ExtResource("3_7bn7s")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eycah"]
+texture = ExtResource("4_drq8u")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sxv6l"]
+texture = ExtResource("5_x8lph")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[resource]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_uaghm")
+sources/1 = SubResource("TileSetAtlasSource_k0tm2")
+sources/2 = SubResource("TileSetScenesCollectionSource_tmtwp")
+sources/3 = SubResource("TileSetAtlasSource_eycah")
+sources/4 = SubResource("TileSetAtlasSource_sxv6l")
