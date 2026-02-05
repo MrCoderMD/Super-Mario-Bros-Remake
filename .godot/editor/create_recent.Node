@@ -1,0 +1,15 @@
+CharacterBody2D
+CollisionPolygon2D
+TouchScreenButton
+CanvasLayer
+Control
+Button
+CollisionShape2D
+TileMapLayer
+Area2D
+StaticBody2D
+Node2D
+Sprite2D
+Label
+Marker2D
+VisibleOnScreenNotifier2D
