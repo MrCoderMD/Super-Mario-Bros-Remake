@@ -1,0 +1,131 @@
+[gd_scene load_steps=19 format=3 uid="uid://bir02loanl6"]
+
+[ext_resource type="Texture2D" uid="uid://bdno32qhuv4uw" path="res://files/images/Others/ui_arrow.png" id="1_ejwpf"]
+[ext_resource type="Script" uid="uid://calbnvmhdmimh" path="res://Scripts/controls.gd" id="1_q6vtx"]
+[ext_resource type="Script" uid="uid://b05ae3cs5r7e2" path="res://Scripts/jump_button.gd" id="2_k4nhr"]
+[ext_resource type="Texture2D" uid="uid://btm6fr1l3ivf7" path="res://files/images/Others/ui_jump.png" id="2_m0n3a"]
+[ext_resource type="Texture2D" uid="uid://beshotpxkqg73" path="res://files/images/Others/ui_sprint.png" id="3_q6vtx"]
+[ext_resource type="Script" uid="uid://np7rxe2qjtp8" path="res://Scripts/sprint_button.gd" id="4_f0kct"]
+[ext_resource type="Script" uid="uid://nnr7fx72md60" path="res://Scripts/select_button.gd" id="6_pwth0"]
+[ext_resource type="Texture2D" uid="uid://ds85ygkvusp7q" path="res://files/images/Others/ui_pause.png" id="7_au1p5"]
+[ext_resource type="Script" uid="uid://dggfligyoept3" path="res://Scripts/left_button.gd" id="8_au1p5"]
+[ext_resource type="Script" uid="uid://ckrqk6s2pis45" path="res://Scripts/right_button.gd" id="10_0r50y"]
+[ext_resource type="Script" uid="uid://ddimshqqjjjq7" path="res://Scripts/up_button.gd" id="11_d54eo"]
+[ext_resource type="Script" uid="uid://lh8xsqrxqxh8" path="res://Scripts/down_button.gd" id="12_xai40"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y32fe"]
+radius = 38.3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0r50y"]
+radius = 38.3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k4nhr"]
+radius = 38.3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_21kh3"]
+radius = 38.3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f0kct"]
+radius = 38.3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pwth0"]
+radius = 38.3
+
+[node name="Controls" type="Node2D"]
+z_index = 50
+script = ExtResource("1_q6vtx")
+
+[node name="JumpButton" type="TouchScreenButton" parent="."]
+process_mode = 3
+process_priority = 1
+position = Vector2(714.7, 390.2)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CircleShape2D_y32fe")
+action = "jump"
+script = ExtResource("2_k4nhr")
+
+[node name="Sprite2D" type="Sprite2D" parent="JumpButton"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_m0n3a")
+
+[node name="SprintButton" type="TouchScreenButton" parent="."]
+position = Vector2(772, 258)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CircleShape2D_y32fe")
+action = "sprint"
+script = ExtResource("4_f0kct")
+
+[node name="Sprite2D" type="Sprite2D" parent="SprintButton"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_q6vtx")
+
+[node name="SelectButton" type="TouchScreenButton" parent="."]
+position = Vector2(813, 38)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_0r50y")
+action = "select"
+script = ExtResource("6_pwth0")
+
+[node name="Sprite2D" type="Sprite2D" parent="SelectButton"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_au1p5")
+
+[node name="LeftButton" type="TouchScreenButton" parent="."]
+position = Vector2(68, 403.2)
+scale = Vector2(1.25, 1.25)
+shape = SubResource("CircleShape2D_k4nhr")
+action = "left"
+script = ExtResource("8_au1p5")
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftButton"]
+rotation = -1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_ejwpf")
+
+[node name="RightButton" type="TouchScreenButton" parent="."]
+position = Vector2(285.6, 403.2)
+scale = Vector2(1.25, 1.25)
+shape = SubResource("CircleShape2D_21kh3")
+action = "right"
+script = ExtResource("10_0r50y")
+
+[node name="Sprite2D" type="Sprite2D" parent="RightButton"]
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_ejwpf")
+
+[node name="UpButton" type="TouchScreenButton" parent="."]
+position = Vector2(176.8, 294.4)
+scale = Vector2(1.25, 1.25)
+shape = SubResource("CircleShape2D_f0kct")
+action = "up"
+script = ExtResource("11_d54eo")
+
+[node name="Sprite2D" type="Sprite2D" parent="UpButton"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_ejwpf")
+
+[node name="DownButton" type="TouchScreenButton" parent="."]
+position = Vector2(176.8, 403.2)
+scale = Vector2(1.25, 1.25)
+shape = SubResource("CircleShape2D_pwth0")
+action = "down"
+script = ExtResource("12_xai40")
+
+[node name="Sprite2D" type="Sprite2D" parent="DownButton"]
+rotation = 3.14159
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_ejwpf")
+
+[connection signal="pressed" from="JumpButton" to="." method="_on_jump_button_pressed"]
+[connection signal="released" from="JumpButton" to="." method="_on_jump_button_released"]
+[connection signal="pressed" from="SprintButton" to="." method="_on_sprint_button_pressed"]
+[connection signal="released" from="SprintButton" to="." method="_on_sprint_button_released"]
+[connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="released" from="LeftButton" to="." method="_on_left_button_released"]
+[connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]
+[connection signal="released" from="RightButton" to="." method="_on_right_button_released"]
+[connection signal="pressed" from="UpButton" to="." method="_on_up_button_pressed"]
+[connection signal="released" from="UpButton" to="." method="_on_up_button_released"]
+[connection signal="pressed" from="DownButton" to="." method="_on_down_button_pressed"]
+[connection signal="released" from="DownButton" to="." method="_on_down_button_released"]

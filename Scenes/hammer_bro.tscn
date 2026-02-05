@@ -1,0 +1,165 @@
+[gd_scene load_steps=16 format=3 uid="uid://dbxrfdi5dk4lt"]
+
+[ext_resource type="Script" uid="uid://br34q1gsckw70" path="res://Scripts/hammer_bro.gd" id="1_fkc0x"]
+[ext_resource type="Texture2D" uid="uid://ctjmcnlx7ggbg" path="res://files/images/hammerbro_2.png" id="1_t17a0"]
+[ext_resource type="Texture2D" uid="uid://se3lqv2oilax" path="res://files/images/hammerbro_3.png" id="2_fkc0x"]
+[ext_resource type="Texture2D" uid="uid://c42rbmtm0xin4" path="res://files/images/hammerbro_0.png" id="3_pjtu4"]
+[ext_resource type="Texture2D" uid="uid://cde0vvwlgsk6x" path="res://files/images/hammerbro_1.png" id="4_8r1fj"]
+[ext_resource type="Texture2D" uid="uid://byf2yk028i50o" path="res://files/images/hammerbro1_2.png" id="5_2h70i"]
+[ext_resource type="Texture2D" uid="uid://bdyqv23hq4pah" path="res://files/images/hammerbro1_3.png" id="6_ji78e"]
+[ext_resource type="Texture2D" uid="uid://dtly8ug2wew37" path="res://files/images/hammerbro1_0.png" id="7_ym75p"]
+[ext_resource type="Texture2D" uid="uid://d0ncrr0gr8kdt" path="res://files/images/hammerbro1_1.png" id="8_t60jc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4b1bw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2h70i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ji78e")
+}],
+"loop": true,
+"name": &"castle_throw",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ym75p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_t60jc")
+}],
+"loop": true,
+"name": &"castle_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_t17a0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fkc0x")
+}],
+"loop": true,
+"name": &"overworld_throw",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_pjtu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8r1fj")
+}],
+"loop": true,
+"name": &"overworld_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2h70i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ji78e")
+}],
+"loop": true,
+"name": &"underground_throw",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ym75p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_t60jc")
+}],
+"loop": true,
+"name": &"underground_walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t17a0"]
+size = Vector2(32, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkc0x"]
+size = Vector2(32, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjtu4"]
+size = Vector2(2, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8r1fj"]
+size = Vector2(2, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2h70i"]
+size = Vector2(32, 1)
+
+[node name="HammerBro" type="CharacterBody2D"]
+collision_layer = 18
+collision_mask = 2
+script = ExtResource("1_fkc0x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_4b1bw")
+animation = &"castle_walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_t17a0")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-5, -35)
+
+[node name="DirTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="AimTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ThrowTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="UpCollision" type="Area2D" parent="."]
+position = Vector2(0, -32)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpCollision"]
+shape = SubResource("RectangleShape2D_fkc0x")
+
+[node name="LeftCollision" type="Area2D" parent="."]
+position = Vector2(-17, -7)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollision"]
+shape = SubResource("RectangleShape2D_pjtu4")
+
+[node name="RightCollision" type="Area2D" parent="."]
+position = Vector2(17, -7)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightCollision"]
+shape = SubResource("RectangleShape2D_8r1fj")
+
+[node name="DownCollision" type="Area2D" parent="."]
+position = Vector2(0, 16.5)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DownCollision"]
+shape = SubResource("RectangleShape2D_2h70i")
+
+[connection signal="timeout" from="DirTimer" to="." method="_on_dir_timer_timeout"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="AimTimer" to="." method="_on_aim_timer_timeout"]
+[connection signal="timeout" from="ThrowTimer" to="." method="_on_throw_timer_timeout"]
+[connection signal="body_entered" from="UpCollision" to="." method="_on_up_collision_body_entered"]
+[connection signal="body_entered" from="LeftCollision" to="." method="_on_left_collision_body_entered"]
+[connection signal="body_entered" from="RightCollision" to="." method="_on_right_collision_body_entered"]
+[connection signal="body_entered" from="DownCollision" to="." method="_on_down_collision_body_entered"]

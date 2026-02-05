@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhnkytp0l4j1b"]
+
+[ext_resource type="Texture2D" uid="uid://co5w1xb68nvxb" path="res://files/images/flower0.png" id="1_qsnk7"]
+[ext_resource type="Script" uid="uid://cmhnlk03tyeh6" path="res://Scripts/fire_flower.gd" id="1_v0evb"]
+[ext_resource type="Texture2D" uid="uid://bq3qme533lif" path="res://files/images/flower1.png" id="2_v0evb"]
+[ext_resource type="Texture2D" uid="uid://tjy0nmnx56hj" path="res://files/images/flower2.png" id="3_8tmga"]
+[ext_resource type="Texture2D" uid="uid://d34bims0gg24d" path="res://files/images/flower3.png" id="4_hsqth"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hcm2w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qsnk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_v0evb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8tmga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hsqth")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yqmw"]
+size = Vector2(32, 32)
+
+[node name="FireFlower" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_v0evb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hcm2w")
+autoplay = "default"
+frame_progress = 0.215459
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6yqmw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

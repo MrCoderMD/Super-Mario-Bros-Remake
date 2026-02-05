@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://by6urslg4yxfn"]
+
+[ext_resource type="Script" uid="uid://d1krsepuai8nu" path="res://Scripts/fire_breath.gd" id="1_22rsc"]
+[ext_resource type="Texture2D" uid="uid://2xxm7ktplb4t" path="res://files/images/fire_0.png" id="1_dc7kp"]
+[ext_resource type="Texture2D" uid="uid://bpk85jf1yf26o" path="res://files/images/fire_1.png" id="2_22rsc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rlhsw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dc7kp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_22rsc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l85nh"]
+size = Vector2(48, 16)
+
+[node name="FireBreath" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_22rsc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rlhsw")
+autoplay = "default"
+frame_progress = 0.26184
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l85nh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

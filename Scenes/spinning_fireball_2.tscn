@@ -1,0 +1,100 @@
+[gd_scene load_steps=8 format=3 uid="uid://ddo15y5d5ymg6"]
+
+[ext_resource type="Script" uid="uid://mx0ltfgdk3uh" path="res://Scripts/spinning_fireball_2.gd" id="1_5gswc"]
+[ext_resource type="Texture2D" uid="uid://diwf7rbsht618" path="res://files/images/fireball_0.png" id="1_ik7im"]
+[ext_resource type="Texture2D" uid="uid://bci4eif2kdrdv" path="res://files/images/fireball_1.png" id="2_5gswc"]
+[ext_resource type="Texture2D" uid="uid://brdj686g48fla" path="res://files/images/fireball_2.png" id="3_c3pyl"]
+[ext_resource type="Texture2D" uid="uid://wetph18mdhht" path="res://files/images/fireball_3.png" id="4_17f78"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_46g0j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ik7im")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5gswc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c3pyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_17f78")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hq2ms"]
+size = Vector2(192, 16)
+
+[node name="SpinningFireball2" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_5gswc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_46g0j")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, 0)
+sprite_frames = SubResource("SpriteFrames_46g0j")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(32, 0)
+sprite_frames = SubResource("SpriteFrames_46g0j")
+autoplay = "default"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(48, 0)
+sprite_frames = SubResource("SpriteFrames_46g0j")
+autoplay = "default"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
+position = Vector2(64, 0)
+sprite_frames = SubResource("SpriteFrames_46g0j")
+autoplay = "default"
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="."]
+position = Vector2(176, 0)
+sprite_frames = SubResource("SpriteFrames_46g0j")
+autoplay = "default"
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="."]
+position = Vector2(80, 0)
+sprite_frames = SubResource("SpriteFrames_46g0j")
+autoplay = "default"
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="."]
+position = Vector2(96, 0)
+sprite_frames = SubResource("SpriteFrames_46g0j")
+autoplay = "default"
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="."]
+position = Vector2(112, 0)
+sprite_frames = SubResource("SpriteFrames_46g0j")
+autoplay = "default"
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="."]
+position = Vector2(128, 0)
+sprite_frames = SubResource("SpriteFrames_46g0j")
+autoplay = "default"
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="."]
+position = Vector2(144, 0)
+sprite_frames = SubResource("SpriteFrames_46g0j")
+autoplay = "default"
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="."]
+position = Vector2(160, 0)
+sprite_frames = SubResource("SpriteFrames_46g0j")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(88, 0)
+shape = SubResource("RectangleShape2D_hq2ms")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

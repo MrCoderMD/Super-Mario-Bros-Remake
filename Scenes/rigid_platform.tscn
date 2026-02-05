@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsbeiq8s26o36"]
+
+[ext_resource type="Script" uid="uid://cnn82h06pvu82" path="res://Scripts/rigid_platform.gd" id="1_qqi1b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qqi1b"]
+size = Vector2(96, 16)
+
+[node name="RigidPlatform" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_qqi1b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qqi1b")

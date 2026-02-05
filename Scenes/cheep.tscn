@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://bvobimrtynof2"]
+
+[ext_resource type="Texture2D" uid="uid://x23ui7mq8a5x" path="res://files/images/cheep2.png" id="1_al6ou"]
+[ext_resource type="Script" uid="uid://b5puyd22jf3mb" path="res://Scripts/cheep.gd" id="1_ndvtw"]
+[ext_resource type="Texture2D" uid="uid://b7wxsgql3nt3n" path="res://files/images/cheep3.png" id="2_ndvtw"]
+[ext_resource type="Texture2D" uid="uid://b5cm56j3jr5ym" path="res://files/images/cheep0.png" id="3_upis3"]
+[ext_resource type="Texture2D" uid="uid://dq2t0mmxfgcvp" path="res://files/images/cheep1.png" id="4_ucy2h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a0eek"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_al6ou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ndvtw")
+}],
+"loop": true,
+"name": &"red",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_upis3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ucy2h")
+}],
+"loop": true,
+"name": &"white",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_al6ou"]
+size = Vector2(32, 32)
+
+[node name="Cheep" type="Area2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_ndvtw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_a0eek")
+animation = &"white"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_al6ou")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+rect = Rect2(-16, -16, 32, 32)
+
+[node name="UpCollision" type="Area2D" parent="."]
+position = Vector2(0, -20)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="UpCollision"]
+build_mode = 1
+polygon = PackedVector2Array(-20, 0, -20, 8, -16, 8, -16, 4, 16, 4, 16, 8, 20, 8, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_entered"]
+[connection signal="body_entered" from="UpCollision" to="." method="_on_up_collision_body_entered"]

@@ -1,0 +1,141 @@
+[gd_scene load_steps=17 format=3 uid="uid://bfwn2l6oqhdt8"]
+
+[ext_resource type="Script" uid="uid://cneuym2celcpa" path="res://Scripts/beetle.gd" id="1_ulyf6"]
+[ext_resource type="Texture2D" uid="uid://b8pv15eegg2ym" path="res://files/images/beetle2_2.png" id="2_0vqr8"]
+[ext_resource type="Texture2D" uid="uid://chsrb6anl7mka" path="res://files/images/beetle2_0.png" id="3_8spgp"]
+[ext_resource type="Texture2D" uid="uid://cegfbs6b6y67b" path="res://files/images/beetle2_1.png" id="4_6sody"]
+[ext_resource type="Texture2D" uid="uid://xtdig5i7ex35" path="res://files/images/beetle_2.png" id="5_fdgeu"]
+[ext_resource type="Texture2D" uid="uid://chqrgekuhdbas" path="res://files/images/beetle_0.png" id="6_1y3xb"]
+[ext_resource type="Texture2D" uid="uid://dll1wtvpfvnsc" path="res://files/images/beetle_1.png" id="7_y1rbp"]
+[ext_resource type="Texture2D" uid="uid://x00ph4qg41dx" path="res://files/images/beetle1_2.png" id="8_u7eax"]
+[ext_resource type="Texture2D" uid="uid://ccdxo1wtp8xfw" path="res://files/images/beetle1_0.png" id="9_1s0s5"]
+[ext_resource type="Texture2D" uid="uid://cxlftmxdormwq" path="res://files/images/beetle1_1.png" id="10_b1i3h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_toqpm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0vqr8")
+}],
+"loop": false,
+"name": &"castle_ded",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8spgp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6sody")
+}],
+"loop": true,
+"name": &"castle_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fdgeu")
+}],
+"loop": false,
+"name": &"overworld_ded",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_1y3xb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_y1rbp")
+}],
+"loop": true,
+"name": &"overworld_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_u7eax")
+}],
+"loop": false,
+"name": &"underground_ded",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_1s0s5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_b1i3h")
+}],
+"loop": true,
+"name": &"underground_walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_457u0"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwuad"]
+size = Vector2(32, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yctcs"]
+size = Vector2(2, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3tbep"]
+size = Vector2(2, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w23vx"]
+size = Vector2(32, 1)
+
+[node name="Beetle" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_ulyf6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_toqpm")
+animation = &"underground_ded"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_457u0")
+
+[node name="UpCollision" type="Area2D" parent="."]
+position = Vector2(0, -16.5)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpCollision"]
+shape = SubResource("RectangleShape2D_gwuad")
+
+[node name="LeftCollision" type="Area2D" parent="."]
+position = Vector2(-17, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollision"]
+shape = SubResource("RectangleShape2D_yctcs")
+
+[node name="RightCollision" type="Area2D" parent="."]
+position = Vector2(17, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightCollision"]
+shape = SubResource("RectangleShape2D_3tbep")
+
+[node name="DownCollision" type="Area2D" parent="."]
+position = Vector2(0, 16.5)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DownCollision"]
+shape = SubResource("RectangleShape2D_w23vx")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+rect = Rect2(-16, -16, 32, 32)
+
+[connection signal="body_entered" from="UpCollision" to="." method="_on_up_collision_body_entered"]
+[connection signal="body_entered" from="LeftCollision" to="." method="_on_left_collision_body_entered"]
+[connection signal="body_entered" from="RightCollision" to="." method="_on_right_collision_body_entered"]
+[connection signal="body_entered" from="DownCollision" to="." method="_on_down_collision_body_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

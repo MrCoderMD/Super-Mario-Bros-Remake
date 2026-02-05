@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2id7sadefywf"]
+
+[ext_resource type="LabelSettings" uid="uid://ccb6eqwucgdym" path="res://score.tres" id="1_0f7a8"]
+[ext_resource type="Script" uid="uid://clk17qxbdr1q5" path="res://Scripts/score.gd" id="2_hnwbn"]
+
+[node name="Score" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = ExtResource("1_0f7a8")
+horizontal_alignment = 1
+script = ExtResource("2_hnwbn")

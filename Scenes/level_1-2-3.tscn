@@ -1,0 +1,155 @@
+[gd_scene load_steps=26 format=4 uid="uid://cuhugqvj6ikl"]
+
+[ext_resource type="Script" uid="uid://cin8ha4ymhnt" path="res://Scripts/level_1_2_3.gd" id="1_16yhh"]
+[ext_resource type="Texture2D" uid="uid://bcy682e66qjgs" path="res://files/images/Tilesets/Hor_pipe.png" id="1_cf8hj"]
+[ext_resource type="AudioStream" uid="uid://cywit58p0y8ne" path="res://files/sounds/underground.wav" id="1_el22k"]
+[ext_resource type="Texture2D" uid="uid://bsqrfdlf66hfy" path="res://files/images/gnd1_2.bmp" id="2_el22k"]
+[ext_resource type="PackedScene" uid="uid://cssgu1xlg7pyn" path="res://Scenes/ui.tscn" id="2_ghp6e"]
+[ext_resource type="Texture2D" uid="uid://eksabeh4efbu" path="res://files/images/invisible_tile.png" id="3_c3qm8"]
+[ext_resource type="Texture2D" uid="uid://d2q5w162enjm4" path="res://files/images/question_block_2_strip2.png" id="4_16yhh"]
+[ext_resource type="Texture2D" uid="uid://cukv0rtyg4tsy" path="res://files/images/brick1.bmp" id="5_ghp6e"]
+[ext_resource type="Texture2D" uid="uid://cw8x80vlv8t5d" path="res://files/images/blockq1_used.png" id="6_c7vbt"]
+[ext_resource type="Texture2D" uid="uid://by7l3n1kq56a4" path="res://files/images/gnd1.bmp" id="7_m4mg2"]
+[ext_resource type="Texture2D" uid="uid://cadfl5sty3xfb" path="res://files/images/Tilesets/Ver_pipe.png" id="8_m4xy1"]
+[ext_resource type="PackedScene" uid="uid://cnnnrsmj5p1nu" path="res://Scenes/coin_floating_1.tscn" id="9_3ek30"]
+[ext_resource type="PackedScene" uid="uid://hr0xdo6g37h4" path="res://Scenes/mario.tscn" id="10_liq78"]
+[ext_resource type="PackedScene" uid="uid://bir02loanl6" path="res://Scenes/controls.tscn" id="14_ghp6e"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jss5i"]
+texture = ExtResource("1_cf8hj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_awnp3"]
+texture = ExtResource("2_el22k")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qbnx8"]
+texture = ExtResource("3_c3qm8")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eoueo"]
+texture = ExtResource("4_16yhh")
+texture_region_size = Vector2i(32, 32)
+0:0/animation_columns = 2
+0:0/animation_speed = 6.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6gw3r"]
+texture = ExtResource("5_ghp6e")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t2k7s"]
+texture = ExtResource("6_c7vbt")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f2mlh"]
+texture = ExtResource("7_m4mg2")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2d65y"]
+texture = ExtResource("8_m4xy1")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_m6n7k"]
+scenes/1/scene = ExtResource("9_3ek30")
+
+[sub_resource type="TileSet" id="TileSet_rlvla"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 0
+sources/5 = SubResource("TileSetAtlasSource_f2mlh")
+sources/0 = SubResource("TileSetAtlasSource_jss5i")
+sources/8 = SubResource("TileSetAtlasSource_2d65y")
+sources/9 = SubResource("TileSetScenesCollectionSource_m6n7k")
+sources/10 = SubResource("TileSetAtlasSource_awnp3")
+sources/20 = SubResource("TileSetAtlasSource_6gw3r")
+sources/12 = SubResource("TileSetAtlasSource_qbnx8")
+sources/22 = SubResource("TileSetAtlasSource_t2k7s")
+sources/19 = SubResource("TileSetAtlasSource_eoueo")
+tile_proxies/coords_level = [[3, Vector2i(0, 0)], [8, Vector2i(0, 0)], [4, Vector2i(0, 0)], [8, Vector2i(1, 0)], [6, Vector2i(0, 0)], [8, Vector2i(2, 0)], [7, Vector2i(0, 0)], [8, Vector2i(3, 0)], [8, Vector2i(0, 0)], [0, Vector2i(2, 0)], [9, Vector2i(0, 0)], [0, Vector2i(3, 0)], [10, Vector2i(0, 0)], [0, Vector2i(4, 0)], [11, Vector2i(0, 0)], [0, Vector2i(5, 0)], [14, Vector2i(0, 0)], [16, Vector2i(0, 0)], [15, Vector2i(0, 0)], [16, Vector2i(1, 0)]]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16yhh"]
+size = Vector2(10, 2)
+
+[node name="Level1-2-3" type="Node2D"]
+script = ExtResource("1_16yhh")
+
+[node name="UI" parent="." instance=ExtResource("2_ghp6e")]
+
+[node name="BgMusic" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-426.5, -240)
+stream = ExtResource("1_el22k")
+autoplay = true
+
+[node name="ForegroundTile" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAgAFAAAAAAAAAAAAAkAFAAAAAAAAAAAAA0ABQAAAAAAAAAAAA4ABQAAAAAAAAABAA0ABQAAAAAAAAABAA4ABQAAAAAAAAACAA0ABQAAAAAAAAACAA4ABQAAAAAAAAADAA0ABQAAAAAAAAADAA4ABQAAAAAAAAAEAA0ABQAAAAAAAAAEAA4ABQAAAAAAAAAFAA0ABQAAAAAAAAAFAA4ABQAAAAAAAAAGAA0ABQAAAAAAAAAGAA4ABQAAAAAAAAAHAA0ABQAAAAAAAAAHAA4ABQAAAAAAAAAIAA0ABQAAAAAAAAAIAA4ABQAAAAAAAAAJAA0ABQAAAAAAAAAJAA4ABQAAAAAAAAAKAA0ABQAAAAAAAAAKAA4ABQAAAAAAAAALAA0ABQAAAAAAAAALAA4ABQAAAAAAAAAMAA0ABQAAAAAAAAAMAA4ABQAAAAAAAAANAA0ABQAAAAAAAAANAA4ABQAAAAAAAAAOAA0ABQAAAAAAAAAOAA4ABQAAAAAAAAAPAA0ABQAAAAAAAAAPAA4ABQAAAAAAAAAQAA0ABQAAAAAAAAAQAA4ABQAAAAAAAAARAA0ABQAAAAAAAAARAA4ABQAAAAAAAAASAA0ABQAAAAAAAAASAA4ABQAAAAAAAAATAA0ABQAAAAAAAAATAA4ABQAAAAAAAAAUAA0ABQAAAAAAAAAUAA4ABQAAAAAAAAAVAA0ABQAAAAAAAAAVAA4ABQAAAAAAAAAWAA0ABQAAAAAAAAAWAA4ABQAAAAAAAAAXAA0ABQAAAAAAAAAXAA4ABQAAAAAAAAAYAA0ABQAAAAAAAAAYAA4ABQAAAAAAAAAZAA0ABQAAAAAAAAAZAA4ABQAAAAAAAAAaAA0ABQAAAAAAAAAaAA4ABQAAAAAAAAAAAAMAFAAAAAAAAAAAAAQAFAAAAAAAAAAAAAsAFAAAAAAAAAAAAAwAFAAAAAAAAAAAAAoAFAAAAAAAAAAAAAcAFAAAAAAAAAAAAAYAFAAAAAAAAAAAAAUAFAAAAAAAAAAaAAIACAACAAAAAAAaAAMACAACAAAAAAAaAAQACAACAAAAAAAaAAUACAACAAAAAAAaAAYACAACAAAAAAAaAAcACAACAAAAAAAaAAgACAACAAAAAAAaAAkACAACAAAAAAAaAAoACAACAAAAAAAaAAsACAACAAAAAAAaAAwACAACAAAAAAAZAAIACAAAAAAAAAAZAAMACAAAAAAAAAAZAAQACAAAAAAAAAAZAAUACAAAAAAAAAAZAAYACAAAAAAAAAAZAAcACAAAAAAAAAAZAAgACAAAAAAAAAAZAAkACAAAAAAAAAAZAAsAAAAFAAAAAAAZAAoACAAAAAAAAAAZAAwAAAACAAAAAAAYAAsAAAADAAAAAAAXAAsAAAADAAAAAAAWAAsAAAAEAAAAAAAYAAwAAAAAAAAAAAAXAAwAAAAAAAAAAAAWAAwAAAABAAAAAAAAAAIAFAAAAAAAAAAFAAIAFAAAAAAAAAAFAAMAFAAAAAAAAAAFAAQAFAAAAAAAAAAFAAUAFAAAAAAAAAAGAAIAFAAAAAAAAAAGAAMAFAAAAAAAAAAGAAQAFAAAAAAAAAAGAAUAFAAAAAAAAAAHAAIAFAAAAAAAAAAHAAMAFAAAAAAAAAAHAAQAFAAAAAAAAAAHAAUAFAAAAAAAAAAIAAIAFAAAAAAAAAAIAAMAFAAAAAAAAAAIAAQAFAAAAAAAAAAIAAUAFAAAAAAAAAAJAAIAFAAAAAAAAAAJAAMAFAAAAAAAAAAJAAQAFAAAAAAAAAAJAAUAFAAAAAAAAAAKAAIAFAAAAAAAAAAKAAMAFAAAAAAAAAAKAAQAFAAAAAAAAAAKAAUAFAAAAAAAAAALAAIAFAAAAAAAAAALAAMAFAAAAAAAAAALAAQAFAAAAAAAAAALAAUAFAAAAAAAAAAMAAIAFAAAAAAAAAAMAAMAFAAAAAAAAAAMAAQAFAAAAAAAAAAMAAUAFAAAAAAAAAANAAIAFAAAAAAAAAANAAMAFAAAAAAAAAANAAQAFAAAAAAAAAANAAUAFAAAAAAAAAAOAAIAFAAAAAAAAAAOAAMAFAAAAAAAAAAOAAQAFAAAAAAAAAAOAAUAFAAAAAAAAAAPAAIAFAAAAAAAAAAPAAMAFAAAAAAAAAAPAAQAFAAAAAAAAAAPAAUAFAAAAAAAAAAQAAIAFAAAAAAAAAAQAAMAFAAAAAAAAAAQAAQAFAAAAAAAAAAQAAUAFAAAAAAAAAARAAIAFAAAAAAAAAARAAMAFAAAAAAAAAARAAQAFAAAAAAAAAARAAUAFAAAAAAAAAASAAIAFAAAAAAAAAASAAMAFAAAAAAAAAASAAQAFAAAAAAAAAASAAUAFAAAAAAAAAATAAIAFAAAAAAAAAATAAMAFAAAAAAAAAATAAQAFAAAAAAAAAATAAUAFAAAAAAAAAAUAAIAFAAAAAAAAAAUAAMAFAAAAAAAAAAUAAQAFAAAAAAAAAAUAAUAFAAAAAAAAAAVAAIAFAAAAAAAAAAVAAMAFAAAAAAAAAAVAAQAFAAAAAAAAAAVAAUAFAAAAAAAAAAWAAIAFAAAAAAAAAAWAAMAFAAAAAAAAAAWAAQAFAAAAAAAAAAWAAUAFAAAAAAAAAAXAAIAFAAAAAAAAAAXAAMAFAAAAAAAAAAXAAQAFAAAAAAAAAAXAAUAFAAAAAAAAAAYAAIAFAAAAAAAAAAYAAMAFAAAAAAAAAAYAAQAFAAAAAAAAAAYAAUAFAAAAAAAAAAWAAYAFAAAAAAAAAAWAAcAFAAAAAAAAAAWAAgAFAAAAAAAAAAWAAkAFAAAAAAAAAAWAAoAFAAAAAAAAAAXAAYAFAAAAAAAAAAXAAcAFAAAAAAAAAAXAAgAFAAAAAAAAAAXAAkAFAAAAAAAAAAXAAoAFAAAAAAAAAAYAAYAFAAAAAAAAAAYAAcAFAAAAAAAAAAYAAgAFAAAAAAAAAAYAAkAFAAAAAAAAAAYAAoAFAAAAAAAAAAFAAkAFAAAAAAAAAAGAAkAFAAAAAAAAAAHAAkAFAAAAAAAAAAIAAkAFAAAAAAAAAAJAAkAFAAAAAAAAAAKAAkAFAAAAAAAAAALAAkAFAAAAAAAAAAMAAkAFAAAAAAAAAANAAkAFAAAAAAAAAAOAAkAFAAAAAAAAAAPAAkAFAAAAAAAAAAQAAkAFAAAAAAAAAARAAkAFAAAAAAAAAASAAkAFAAAAAAAAAATAAkAFAAAAAAAAAAUAAkAFAAAAAAAAAAVAAkAFAAAAAAAAAAGAAgACQAAAAAAAQAIAAgACQAAAAAAAQAKAAgACQAAAAAAAQAMAAgACQAAAAAAAQAOAAgACQAAAAAAAQAQAAgACQAAAAAAAQASAAgACQAAAAAAAQAUAAgACQAAAAAAAQAFAAwACQAAAAAAAQAHAAwACQAAAAAAAQAJAAwACQAAAAAAAQALAAwACQAAAAAAAQANAAwACQAAAAAAAQAPAAwACQAAAAAAAQARAAwACQAAAAAAAQATAAwACQAAAAAAAQA=")
+tile_set = SubResource("TileSet_rlvla")
+
+[node name="Mario" parent="." node_paths=PackedStringArray("block_layer") instance=ExtResource("10_liq78")]
+position = Vector2(66, 85)
+block_layer = NodePath("../ForegroundTile")
+
+[node name="LevelTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="Controls" parent="." instance=ExtResource("14_ghp6e")]
+
+[node name="Transition" type="Area2D" parent="."]
+position = Vector2(700, 415)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition"]
+shape = SubResource("RectangleShape2D_16yhh")
+
+[connection signal="finished" from="BgMusic" to="." method="_on_bg_music_finished"]
+[connection signal="body_entered" from="ForegroundTile/CoinFloating1" to="ForegroundTile/CoinFloating1" method="_on_body_entered"]
+[connection signal="body_entered" from="ForegroundTile/@Area2D@21015" to="ForegroundTile/@Area2D@21015" method="_on_body_entered"]
+[connection signal="body_entered" from="ForegroundTile/@Area2D@21016" to="ForegroundTile/@Area2D@21016" method="_on_body_entered"]
+[connection signal="body_entered" from="ForegroundTile/@Area2D@21017" to="ForegroundTile/@Area2D@21017" method="_on_body_entered"]
+[connection signal="body_entered" from="ForegroundTile/@Area2D@21018" to="ForegroundTile/@Area2D@21018" method="_on_body_entered"]
+[connection signal="body_entered" from="ForegroundTile/@Area2D@21019" to="ForegroundTile/@Area2D@21019" method="_on_body_entered"]
+[connection signal="body_entered" from="ForegroundTile/@Area2D@21020" to="ForegroundTile/@Area2D@21020" method="_on_body_entered"]
+[connection signal="body_entered" from="ForegroundTile/@Area2D@21021" to="ForegroundTile/@Area2D@21021" method="_on_body_entered"]
+[connection signal="body_entered" from="ForegroundTile/@Area2D@21022" to="ForegroundTile/@Area2D@21022" method="_on_body_entered"]
+[connection signal="body_entered" from="ForegroundTile/@Area2D@21023" to="ForegroundTile/@Area2D@21023" method="_on_body_entered"]
+[connection signal="body_entered" from="ForegroundTile/@Area2D@21024" to="ForegroundTile/@Area2D@21024" method="_on_body_entered"]
+[connection signal="body_entered" from="ForegroundTile/@Area2D@21025" to="ForegroundTile/@Area2D@21025" method="_on_body_entered"]
+[connection signal="body_entered" from="ForegroundTile/@Area2D@21026" to="ForegroundTile/@Area2D@21026" method="_on_body_entered"]
+[connection signal="body_entered" from="ForegroundTile/@Area2D@21027" to="ForegroundTile/@Area2D@21027" method="_on_body_entered"]
+[connection signal="body_entered" from="ForegroundTile/@Area2D@21028" to="ForegroundTile/@Area2D@21028" method="_on_body_entered"]
+[connection signal="body_entered" from="ForegroundTile/@Area2D@21029" to="ForegroundTile/@Area2D@21029" method="_on_body_entered"]
+[connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
+[connection signal="body_entered" from="Transition" to="." method="_on_transition_body_entered"]

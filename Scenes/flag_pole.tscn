@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://ihr0rkaxns50"]
+
+[ext_resource type="Script" uid="uid://ntoy0nsu8run" path="res://Scripts/flag_pole.gd" id="1_d82tc"]
+[ext_resource type="Texture2D" uid="uid://b65xwjuq1x77e" path="res://files/images/flagpole_1.png" id="1_l1r46"]
+[ext_resource type="Texture2D" uid="uid://b36arffklcd5m" path="res://files/images/end0_flag.png" id="2_d82tc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gan5r"]
+size = Vector2(4, 320)
+
+[node name="FlagPole" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_d82tc")
+
+[node name="Pole" type="Sprite2D" parent="."]
+texture = ExtResource("1_l1r46")
+
+[node name="Flag" type="Sprite2D" parent="."]
+position = Vector2(-17, -112)
+texture = ExtResource("2_d82tc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gan5r")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

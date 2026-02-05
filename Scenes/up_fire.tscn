@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://5gttedt6ep2h"]
+
+[ext_resource type="Texture2D" uid="uid://cmy0ddil6usw1" path="res://files/images/upfire.png" id="1_avuke"]
+[ext_resource type="Script" uid="uid://b6rxfcotqe166" path="res://Scripts/up_fire.gd" id="1_pfxa5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfxa5"]
+size = Vector2(32, 32)
+
+[node name="UpFire" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_pfxa5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_avuke")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pfxa5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

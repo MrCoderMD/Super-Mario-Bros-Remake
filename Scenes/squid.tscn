@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqd5q3bybaxq5"]
+
+[ext_resource type="Script" uid="uid://cldgl6o6peneh" path="res://Scripts/squid.gd" id="1_hfqti"]
+[ext_resource type="Texture2D" uid="uid://c23nelereqsrq" path="res://files/images/squid0.png" id="2_esdqk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4iy8l"]
+size = Vector2(32, 32)
+
+[node name="Squid" type="Area2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_hfqti")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_esdqk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_4iy8l")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+rect = Rect2(-16, -24, 32, 48)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

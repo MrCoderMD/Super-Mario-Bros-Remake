@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://cnnnrsmj5p1nu"]
+
+[ext_resource type="Texture2D" uid="uid://cng24q476w5e5" path="res://files/images/coin_use00.png" id="1_gepsg"]
+[ext_resource type="Script" uid="uid://wqebtev1k1w4" path="res://Scripts/coin_floating_1.gd" id="1_qhjn5"]
+[ext_resource type="Texture2D" uid="uid://d2jqn01pp1oru" path="res://files/images/coin_use01.png" id="2_qhjn5"]
+[ext_resource type="Texture2D" uid="uid://cc8notdey0ndk" path="res://files/images/coin_use02.png" id="3_c65sq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3arej"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gepsg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qhjn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c65sq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wd0dg"]
+size = Vector2(32, 32)
+
+[node name="CoinFloating1" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_qhjn5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3arej")
+autoplay = "default"
+frame_progress = 0.748905
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wd0dg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

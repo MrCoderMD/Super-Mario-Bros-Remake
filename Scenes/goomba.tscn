@@ -1,0 +1,144 @@
+[gd_scene load_steps=17 format=3 uid="uid://dks3j3n3s82wq"]
+
+[ext_resource type="Script" uid="uid://dbm38evc8ejd3" path="res://Scripts/goomba.gd" id="1_78mqb"]
+[ext_resource type="Texture2D" uid="uid://3xiu5p5pl7ft" path="res://files/images/goombas2_ded.png" id="2_rj6mc"]
+[ext_resource type="Texture2D" uid="uid://dviqaev1iy4jj" path="res://files/images/goombas_ded.png" id="2_v0o2j"]
+[ext_resource type="Texture2D" uid="uid://bi83ybl0pf0lh" path="res://files/images/goombas1_ded.png" id="2_ylwvy"]
+[ext_resource type="Texture2D" uid="uid://cygylhuox0e0l" path="res://files/images/goombas2_0.png" id="3_5yeko"]
+[ext_resource type="Texture2D" uid="uid://dvh2s2h7mp8kf" path="res://files/images/goombas1_0.png" id="3_l55er"]
+[ext_resource type="Texture2D" uid="uid://8x1epuupgyb1" path="res://files/images/goombas_0.png" id="3_n4fpq"]
+[ext_resource type="Texture2D" uid="uid://cwnyxofxwwtjf" path="res://files/images/goombas1_1.png" id="4_g0qnl"]
+[ext_resource type="Texture2D" uid="uid://c1xrn5g5lvsbe" path="res://files/images/goombas2_1.png" id="4_t2lr5"]
+[ext_resource type="Texture2D" uid="uid://5efcqc6tdxx1" path="res://files/images/goombas_1.png" id="4_ylwvy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gtbuv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rj6mc")
+}],
+"loop": true,
+"name": &"castle_ded",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5yeko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t2lr5")
+}],
+"loop": false,
+"name": &"castle_walk",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_v0o2j")
+}],
+"loop": false,
+"name": &"overworld_ded",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_n4fpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ylwvy")
+}],
+"loop": true,
+"name": &"overworld_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ylwvy")
+}],
+"loop": false,
+"name": &"underground_ded",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_l55er")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g0qnl")
+}],
+"loop": true,
+"name": &"underground_walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l55er"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78mqb"]
+size = Vector2(32, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0o2j"]
+size = Vector2(2, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4fpq"]
+size = Vector2(2, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylwvy"]
+size = Vector2(32, 2)
+
+[node name="Goomba" type="CharacterBody2D"]
+collision_layer = 18
+collision_mask = 2
+safe_margin = 0.001
+script = ExtResource("1_78mqb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gtbuv")
+animation = &"castle_walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l55er")
+
+[node name="UpCollision" type="Area2D" parent="."]
+position = Vector2(0, -16.5)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpCollision"]
+shape = SubResource("RectangleShape2D_78mqb")
+
+[node name="LeftCollision" type="Area2D" parent="."]
+position = Vector2(-17, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollision"]
+shape = SubResource("RectangleShape2D_v0o2j")
+
+[node name="RightCollision" type="Area2D" parent="."]
+position = Vector2(17, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightCollision"]
+shape = SubResource("RectangleShape2D_n4fpq")
+
+[node name="DownCollision" type="Area2D" parent="."]
+position = Vector2(0, 16.5)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DownCollision"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ylwvy")
+debug_color = Color(0.820401, 0.335223, 0.580612, 0.42)
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+rect = Rect2(-16, -16, 32, 32)
+
+[connection signal="body_entered" from="UpCollision" to="." method="_on_up_collision_body_entered"]
+[connection signal="body_entered" from="LeftCollision" to="." method="_on_left_collision_body_entered"]
+[connection signal="body_entered" from="RightCollision" to="." method="_on_right_collision_body_entered"]
+[connection signal="body_entered" from="DownCollision" to="." method="_on_down_collision_body_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

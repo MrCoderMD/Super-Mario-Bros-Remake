@@ -1,0 +1,137 @@
+[gd_scene load_steps=16 format=4 uid="uid://lpq6doprvgsb"]
+
+[ext_resource type="Texture2D" uid="uid://bupr0tcu84nwe" path="res://files/images/84.bmp" id="1_p43ft"]
+[ext_resource type="Script" uid="uid://cekq1qxjvuoxo" path="res://Scripts/level_8_4_4.gd" id="1_ushog"]
+[ext_resource type="AudioStream" uid="uid://b8gm2ey4o3mo5" path="res://files/sounds/castle.wav" id="2_ushog"]
+[ext_resource type="PackedScene" uid="uid://bir02loanl6" path="res://Scenes/controls.tscn" id="3_22c47"]
+[ext_resource type="TileSet" uid="uid://ijr2m6s1gjrk" path="res://castle_tiles.tres" id="4_rdhwf"]
+[ext_resource type="PackedScene" uid="uid://hr0xdo6g37h4" path="res://Scenes/mario.tscn" id="5_tts4u"]
+[ext_resource type="PackedScene" uid="uid://cssgu1xlg7pyn" path="res://Scenes/ui.tscn" id="6_wpilo"]
+[ext_resource type="FontFile" uid="uid://7wavk5adg2q1" path="res://PressStart2P.ttf" id="8_22c47"]
+[ext_resource type="Texture2D" uid="uid://cuwjato40sjbn" path="res://files/images/peach.png" id="9_rdhwf"]
+[ext_resource type="TileSet" uid="uid://burqwbbfkaihs" path="res://enemies.tres" id="10_wpilo"]
+[ext_resource type="PackedScene" uid="uid://5gttedt6ep2h" path="res://Scenes/up_fire.tscn" id="11_d1plv"]
+[ext_resource type="PackedScene" uid="uid://c1lvinmxo53n" path="res://Scenes/bowser.tscn" id="12_d1plv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1plv"]
+size = Vector2(10, 480)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rdhwf"]
+font = ExtResource("8_22c47")
+font_size = 14
+
+[sub_resource type="LabelSettings" id="LabelSettings_tts4u"]
+line_spacing = 20.0
+font = ExtResource("8_22c47")
+font_size = 14
+
+[node name="Level8-4-4" type="Node2D"]
+script = ExtResource("1_ushog")
+
+[node name="84" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.498039)
+position = Vector2(-8192, 0)
+texture = ExtResource("1_p43ft")
+centered = false
+
+[node name="CameraFollower" type="Node2D" parent="."]
+position = Vector2(425, 240)
+
+[node name="BgMusic" type="AudioStreamPlayer2D" parent="CameraFollower"]
+position = Vector2(-426.5, -240)
+stream = ExtResource("2_ushog")
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="CameraFollower"]
+
+[node name="CameraBorder" type="StaticBody2D" parent="CameraFollower"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="LeftBorder" type="CollisionShape2D" parent="CameraFollower/CameraBorder"]
+position = Vector2(-426.5, 0)
+shape = SubResource("RectangleShape2D_d1plv")
+
+[node name="Controls" parent="CameraFollower" instance=ExtResource("3_22c47")]
+process_mode = 3
+position = Vector2(-425.5, -240)
+
+[node name="ForegroundTile" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAIAAQAAAAAAAAABAAIAAQAAAAAAAAACAAIAAQAAAAAAAAADAAIAAQAAAAAAAAAEAAIAAQAAAAAAAAAFAAIAAQAAAAAAAAAGAAIAAQAAAAAAAAAHAAIAAQAAAAAAAAAIAAIAAQAAAAAAAAAJAAIAAQAAAAAAAAAKAAIAAQAAAAAAAAALAAIAAQAAAAAAAAAMAAIAAQAAAAAAAAANAAIAAQAAAAAAAAAOAAIAAQAAAAAAAAAPAAIAAQAAAAAAAAAQAAIAAQAAAAAAAAARAAIAAQAAAAAAAAASAAIAAQAAAAAAAAATAAIAAQAAAAAAAAAUAAIAAQAAAAAAAAAVAAIAAQAAAAAAAAAWAAIAAQAAAAAAAAAXAAIAAQAAAAAAAAAYAAIAAQAAAAAAAAAZAAIAAQAAAAAAAAAaAAIAAQAAAAAAAAAbAAIAAQAAAAAAAAAcAAIAAQAAAAAAAAAdAAIAAQAAAAAAAAAeAAIAAQAAAAAAAAAfAAIAAQAAAAAAAAAgAAIAAQAAAAAAAAAhAAIAAQAAAAAAAAAiAAIAAQAAAAAAAAAjAAIAAQAAAAAAAAAkAAIAAQAAAAAAAAAlAAIAAQAAAAAAAAAmAAIAAQAAAAAAAAAnAAIAAQAAAAAAAAAoAAIAAQAAAAAAAAApAAIAAQAAAAAAAAAqAAIAAQAAAAAAAAArAAIAAQAAAAAAAAAsAAIAAQAAAAAAAAAtAAIAAQAAAAAAAAAuAAIAAQAAAAAAAAAvAAIAAQAAAAAAAAAwAAIAAQAAAAAAAAAxAAIAAQAAAAAAAAAyAAIAAQAAAAAAAAAzAAIAAQAAAAAAAAA0AAIAAQAAAAAAAAA1AAIAAQAAAAAAAAA2AAIAAQAAAAAAAAA3AAIAAQAAAAAAAAA4AAIAAQAAAAAAAAA5AAIAAQAAAAAAAAA6AAIAAQAAAAAAAAA7AAIAAQAAAAAAAAA8AAIAAQAAAAAAAAA9AAIAAQAAAAAAAAA+AAIAAQAAAAAAAAA/AAIAAQAAAAAAAAAuAAMAAQAAAAAAAAAuAAQAAQAAAAAAAAAvAAQAAQAAAAAAAAAvAAUAAQAAAAAAAAAvAAMAAQAAAAAAAAAuAAUAAQAAAAAAAAAtAAkAAQAAAAAAAAAtAAoAAQAAAAAAAAAtAAsAAQAAAAAAAAAtAAwAAQAAAAAAAAAtAA0AAQAAAAAAAAAtAA4AAQAAAAAAAAAuAAkAAQAAAAAAAAAuAAoAAQAAAAAAAAAuAAsAAQAAAAAAAAAuAAwAAQAAAAAAAAAuAA0AAQAAAAAAAAAuAA4AAQAAAAAAAAAvAAkAAQAAAAAAAAAvAAoAAQAAAAAAAAAvAAsAAQAAAAAAAAAvAAwAAQAAAAAAAAAvAA0AAQAAAAAAAAAvAA4AAQAAAAAAAAAwAA0AAQAAAAAAAAAwAA4AAQAAAAAAAAAxAA0AAQAAAAAAAAAxAA4AAQAAAAAAAAAyAA0AAQAAAAAAAAAyAA4AAQAAAAAAAAAzAA0AAQAAAAAAAAAzAA4AAQAAAAAAAAA0AA0AAQAAAAAAAAA0AA4AAQAAAAAAAAA1AA0AAQAAAAAAAAA1AA4AAQAAAAAAAAA2AA0AAQAAAAAAAAA2AA4AAQAAAAAAAAA3AA0AAQAAAAAAAAA3AA4AAQAAAAAAAAA4AA0AAQAAAAAAAAA4AA4AAQAAAAAAAAA5AA0AAQAAAAAAAAA5AA4AAQAAAAAAAAA6AA0AAQAAAAAAAAA6AA4AAQAAAAAAAAA7AA0AAQAAAAAAAAA7AA4AAQAAAAAAAAA8AA0AAQAAAAAAAAA8AA4AAQAAAAAAAAA9AA0AAQAAAAAAAAA9AA4AAQAAAAAAAAA+AA0AAQAAAAAAAAA+AA4AAQAAAAAAAAA/AA0AAQAAAAAAAAA/AA4AAQAAAAAAAAAaAAMAAQAAAAAAAAAaAAQAAQAAAAAAAAAbAAMAAQAAAAAAAAAbAAQAAQAAAAAAAAAcAAMAAQAAAAAAAAAcAAQAAQAAAAAAAAAdAAMAAQAAAAAAAAAdAAQAAQAAAAAAAAAeAAMAAQAAAAAAAAAeAAQAAQAAAAAAAAAfAAMAAQAAAAAAAAAfAAQAAQAAAAAAAAAaAAoAAQAAAAAAAAAaAAsAAQAAAAAAAAAaAAwAAQAAAAAAAAAaAA0AAQAAAAAAAAAaAA4AAQAAAAAAAAAbAAoAAQAAAAAAAAAbAAsAAQAAAAAAAAAbAAwAAQAAAAAAAAAbAA0AAQAAAAAAAAAbAA4AAQAAAAAAAAAcAAoAAQAAAAAAAAAcAAsAAQAAAAAAAAAcAAwAAQAAAAAAAAAcAA0AAQAAAAAAAAAcAA4AAQAAAAAAAAAdAAoAAQAAAAAAAAAdAAsAAQAAAAAAAAAdAAwAAQAAAAAAAAAdAA0AAQAAAAAAAAAdAA4AAQAAAAAAAAAeAAoAAQAAAAAAAAAeAAsAAQAAAAAAAAAeAAwAAQAAAAAAAAAeAA0AAQAAAAAAAAAeAA4AAQAAAAAAAAAfAAoAAQAAAAAAAAAfAAsAAQAAAAAAAAAfAAwAAQAAAAAAAAAfAA0AAQAAAAAAAAAfAA4AAQAAAAAAAAAMAA0AAQAAAAAAAAAMAA4AAQAAAAAAAAANAA0AAQAAAAAAAAANAA4AAQAAAAAAAAAOAA0AAQAAAAAAAAAOAA4AAQAAAAAAAAAPAA0AAQAAAAAAAAAPAA4AAQAAAAAAAAAQAA0AAQAAAAAAAAAQAA4AAQAAAAAAAAARAA0AAQAAAAAAAAARAA4AAQAAAAAAAAASAA0AAQAAAAAAAAASAA4AAQAAAAAAAAATAA0AAQAAAAAAAAATAA4AAQAAAAAAAAAUAA0AAQAAAAAAAAAUAA4AAQAAAAAAAAAFAA0AAQAAAAAAAAAFAA4AAQAAAAAAAAAGAA0AAQAAAAAAAAAGAA4AAQAAAAAAAAAHAA0AAQAAAAAAAAAHAA4AAQAAAAAAAAAIAA0AAQAAAAAAAAAIAA4AAQAAAAAAAAAJAA0AAQAAAAAAAAAJAA4AAQAAAAAAAAAAAA0AAQAAAAAAAAAAAA4AAQAAAAAAAAABAA0AAQAAAAAAAAABAA4AAQAAAAAAAAACAA0AAQAAAAAAAAACAA4AAQAAAAAAAAAVAA0AAgAAAAAAAAAWAA0AAgAAAAAAAAAXAA0AAgAAAAAAAAAYAA0AAgAAAAAAAAAZAA0AAgAAAAAAAAAgAA0AAgAAAAAAAAAhAA0AAgAAAAAAAAAiAA0AAgAAAAAAAAAjAA0AAgAAAAAAAAAkAA0AAgAAAAAAAAAlAA0AAgAAAAAAAAAmAA0AAgAAAAAAAAAnAA0AAgAAAAAAAAAoAA0AAgAAAAAAAAApAA0AAgAAAAAAAAAqAA0AAgAAAAAAAAArAA0AAgAAAAAAAAAsAA0AAgAAAAAAAAAVAA4ABQAAAAAAAAAWAA4ABQAAAAAAAAAXAA4ABQAAAAAAAAAYAA4ABQAAAAAAAAAZAA4ABQAAAAAAAAAgAA4ABQAAAAAAAAAhAA4ABQAAAAAAAAAiAA4ABQAAAAAAAAAjAA4ABQAAAAAAAAAkAA4ABQAAAAAAAAAlAA4ABQAAAAAAAAAmAA4ABQAAAAAAAAAnAA4ABQAAAAAAAAAoAA4ABQAAAAAAAAApAA4ABQAAAAAAAAAqAA4ABQAAAAAAAAArAA4ABQAAAAAAAAAsAA4ABQAAAAAAAAAgAAoABwAAAAAAAAAhAAoABwAAAAAAAAAiAAoABwAAAAAAAAAjAAoABwAAAAAAAAAkAAoABwAAAAAAAAAlAAoABwAAAAAAAAAmAAoABwAAAAAAAAAnAAoABwAAAAAAAAAoAAoABwAAAAAAAAApAAoABwAAAAAAAAAqAAoABwAAAAAAAAArAAoABwAAAAAAAAAsAAoABwAAAAAAAAAsAAkACgAAAAAAAAAtAAgAAAAAAAAAAQADAA4ADQAAAAAAAAAEAA4ADQACAAAAAAADAA0ADQAAAAAAAAAEAA0ADQACAAAAAAADAAwADQAAAAAAAAAEAAwADQACAAAAAAADAAsADQABAAAAAAAEAAsADQADAAAAAAAKAA4ADQAAAAAAAAALAA4ADQACAAAAAAAKAA0ADQAAAAAAAAALAA0ADQACAAAAAAAKAAwADQAAAAAAAAALAAwADQACAAAAAAAKAAsADQABAAAAAAALAAsADQADAAAAAAA=")
+tile_set = ExtResource("4_rdhwf")
+
+[node name="Mario" parent="." node_paths=PackedStringArray("block_layer") instance=ExtResource("5_tts4u")]
+position = Vector2(80, 208)
+block_layer = NodePath("../ForegroundTile")
+
+[node name="LevelTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="UI" parent="." instance=ExtResource("6_wpilo")]
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1679.0
+offset_top = 160.0
+offset_right = 1903.0
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "THANK YOU MARIO!"
+label_settings = SubResource("LabelSettings_rdhwf")
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1660.0
+offset_top = 210.0
+offset_right = 1968.0
+offset_bottom = 258.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "YOUR QUEST IS OVER."
+label_settings = SubResource("LabelSettings_tts4u")
+
+[node name="Label3" type="Label" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1601.0
+offset_top = 242.0
+offset_right = 1993.0
+offset_bottom = 290.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "TOUCH THE SCEEN TO CONTINUE."
+label_settings = SubResource("LabelSettings_tts4u")
+
+[node name="Peach" type="Sprite2D" parent="."]
+position = Vector2(1840, 392)
+texture = ExtResource("9_rdhwf")
+
+[node name="Enemies" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAADAAsAAAAAAAAAAwAKAAsAAAAAAAAAAwARAAwAAAAAAAAABQA=")
+tile_set = ExtResource("10_wpilo")
+
+[node name="UpFire" parent="." instance=ExtResource("11_d1plv")]
+position = Vector2(752, 496)
+
+[node name="Bowser" parent="." instance=ExtResource("12_d1plv")]
+position = Vector2(1351, 284)
+
+[node name="Bound" type="Marker2D" parent="."]
+position = Vector2(1056, 291)
+gizmo_extents = 20.0
+
+[connection signal="finished" from="CameraFollower/BgMusic" to="." method="_on_bg_music_finished"]
+[connection signal="body_entered" from="ForegroundTile/Axe" to="ForegroundTile/Axe" method="_on_body_entered"]
+[connection signal="body_entered" from="Enemies/Plant" to="Enemies/Plant" method="_on_body_entered"]
+[connection signal="body_entered" from="Enemies/@Area2D@81442" to="Enemies/@Area2D@81442" method="_on_body_entered"]

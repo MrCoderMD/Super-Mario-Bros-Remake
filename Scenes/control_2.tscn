@@ -1,0 +1,392 @@
+[gd_scene load_steps=56 format=4 uid="uid://b53q3u4cr55bk"]
+
+[ext_resource type="Script" uid="uid://c0gm2jn4lng5b" path="res://Scripts/control_2.gd" id="1_2cuc2"]
+[ext_resource type="Texture2D" uid="uid://bdno32qhuv4uw" path="res://files/images/Others/ui_arrow.png" id="1_m65lj"]
+[ext_resource type="Texture2D" uid="uid://besjpgp3jiy4m" path="res://files/images/bush_right.png" id="2_5a7aj"]
+[ext_resource type="Texture2D" uid="uid://cx8oxol4twcfp" path="res://files/images/bush_left.png" id="3_midvi"]
+[ext_resource type="Texture2D" uid="uid://802twxv52e1t" path="res://files/images/cloud_center_bot.png" id="4_2y0ff"]
+[ext_resource type="Texture2D" uid="uid://b876yrmdootjx" path="res://files/images/grass_center.png" id="5_0trv8"]
+[ext_resource type="Texture2D" uid="uid://ddmttfpctx1im" path="res://files/images/grass_left.png" id="6_oa0b2"]
+[ext_resource type="Texture2D" uid="uid://dqx7fh7m3scyb" path="res://files/images/grass_right.png" id="7_gu1wr"]
+[ext_resource type="Texture2D" uid="uid://cymid328jhjg4" path="res://files/images/water_2.bmp" id="8_7i72v"]
+[ext_resource type="Texture2D" uid="uid://8bmqiu6uyrmj" path="res://files/images/gnd_red_1.bmp" id="9_6ybxm"]
+[ext_resource type="Texture2D" uid="uid://drdgiftbjs787" path="res://files/images/bush_top.png" id="10_ctpo6"]
+[ext_resource type="Texture2D" uid="uid://dpwnj7h1utmd2" path="res://files/images/bush_center_0.bmp" id="11_mj3va"]
+[ext_resource type="Texture2D" uid="uid://c55x3tk5pexly" path="res://files/images/bush_center_1.bmp" id="12_2nsgd"]
+[ext_resource type="Texture2D" uid="uid://dc02wo1j4h470" path="res://files/images/cloud_center_top.png" id="13_2okaw"]
+[ext_resource type="Texture2D" uid="uid://bjermh5j4xwsj" path="res://files/images/cloud_left_bot.png" id="14_xrcxy"]
+[ext_resource type="Texture2D" uid="uid://dd7ay8t6sbjtw" path="res://files/images/cloud_left_top.png" id="15_qunfq"]
+[ext_resource type="Texture2D" uid="uid://clyva6epfljrv" path="res://files/images/cloud_right_bot.png" id="16_vuduw"]
+[ext_resource type="Texture2D" uid="uid://ogilpqbw46n3" path="res://files/images/cloud_right_top.png" id="17_7qis8"]
+[ext_resource type="Texture2D" uid="uid://sbegfbmqc4u6" path="res://files/images/mario/mario.png" id="18_i42gt"]
+[ext_resource type="PackedScene" uid="uid://bir02loanl6" path="res://Scenes/controls.tscn" id="19_vtttd"]
+[ext_resource type="LabelSettings" uid="uid://ccb6eqwucgdym" path="res://score.tres" id="20_48oew"]
+[ext_resource type="Texture2D" uid="uid://d2s4u7023wyg1" path="res://files/images/mushroom.png" id="21_oa0b2"]
+[ext_resource type="Texture2D" uid="uid://jbyavvu5gpbc" path="res://files/images/platformbonus.png" id="22_midvi"]
+[ext_resource type="FontFile" uid="uid://7wavk5adg2q1" path="res://PressStart2P.ttf" id="23_0trv8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7aogb"]
+texture = ExtResource("2_5a7aj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_21yg0"]
+texture = ExtResource("3_midvi")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rbc5j"]
+texture = ExtResource("4_2y0ff")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f434h"]
+texture = ExtResource("5_0trv8")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v3cfh"]
+texture = ExtResource("6_oa0b2")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gexx8"]
+texture = ExtResource("7_gu1wr")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wafib"]
+texture = ExtResource("8_7i72v")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1nbm2"]
+texture = ExtResource("9_6ybxm")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bfvqg"]
+texture = ExtResource("10_ctpo6")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mxysb"]
+texture = ExtResource("11_mj3va")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nrga3"]
+texture = ExtResource("12_2nsgd")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aihyt"]
+texture = ExtResource("13_2okaw")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dr8yl"]
+texture = ExtResource("14_xrcxy")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j2r4j"]
+texture = ExtResource("15_qunfq")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bi5m0"]
+texture = ExtResource("16_vuduw")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s3ghm"]
+texture = ExtResource("17_7qis8")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_6afg6"]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_21yg0")
+sources/0 = SubResource("TileSetAtlasSource_7aogb")
+sources/2 = SubResource("TileSetAtlasSource_bfvqg")
+sources/3 = SubResource("TileSetAtlasSource_mxysb")
+sources/4 = SubResource("TileSetAtlasSource_nrga3")
+sources/5 = SubResource("TileSetAtlasSource_aihyt")
+sources/6 = SubResource("TileSetAtlasSource_dr8yl")
+sources/7 = SubResource("TileSetAtlasSource_j2r4j")
+sources/8 = SubResource("TileSetAtlasSource_bi5m0")
+sources/9 = SubResource("TileSetAtlasSource_s3ghm")
+sources/10 = SubResource("TileSetAtlasSource_rbc5j")
+sources/11 = SubResource("TileSetAtlasSource_f434h")
+sources/12 = SubResource("TileSetAtlasSource_v3cfh")
+sources/13 = SubResource("TileSetAtlasSource_gexx8")
+sources/14 = SubResource("TileSetAtlasSource_wafib")
+sources/15 = SubResource("TileSetAtlasSource_1nbm2")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2y0ff"]
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0trv8"]
+texture = ExtResource("22_midvi")
+axis_stretch_horizontal = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oa0b2"]
+texture = ExtResource("22_midvi")
+axis_stretch_horizontal = 2
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gu1wr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0trv8"]
+radius = 38.3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oa0b2"]
+radius = 38.3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gu1wr"]
+radius = 38.3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7i72v"]
+radius = 38.3
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mj3va"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0trv8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oa0b2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7i72v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ybxm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ctpo6"]
+
+[node name="Control2" type="CanvasLayer"]
+layer = 128
+script = ExtResource("1_2cuc2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 853.0
+offset_bottom = 480.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.360784, 0.580392, 0.988235, 1)
+
+[node name="BackgroundTile" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAwAAQAAAAAAAAABAAsAAQAAAAAAAAAQAAwAAQAAAAAAAAAEAAwAAAAAAAAAAAADAAsAAAAAAAAAAAASAAwAAAAAAAAAAAACAAoAAgAAAAAAAAARAAsAAgAAAAAAAAABAAwAAwAAAAAAAAACAAsAAwAAAAAAAAACAAwABAAAAAAAAAADAAwAAwAAAAAAABARAAwAAwAAAAAAAAAPAAwADQAAAAAAAAALAAwADAAAAAAAAAAMAAwACwAAAAAAAAANAAwACwAAAAAAAAAOAAwACwAAAAAAAAAYAAwACwAAAAAAAAAXAAwADAAAAAAAAAAZAAwADQAAAAAAAAAAAA0ADwAAAAAAAAAAAA4ADwAAAAAAAAABAA0ADwAAAAAAAAABAA4ADwAAAAAAAAACAA0ADwAAAAAAAAACAA4ADwAAAAAAAAADAA0ADwAAAAAAAAADAA4ADwAAAAAAAAAEAA0ADwAAAAAAAAAEAA4ADwAAAAAAAAAFAA0ADwAAAAAAAAAFAA4ADwAAAAAAAAAGAA0ADwAAAAAAAAAGAA4ADwAAAAAAAAAHAA0ADwAAAAAAAAAHAA4ADwAAAAAAAAAIAA0ADwAAAAAAAAAIAA4ADwAAAAAAAAAJAA0ADwAAAAAAAAAJAA4ADwAAAAAAAAAKAA0ADwAAAAAAAAAKAA4ADwAAAAAAAAALAA0ADwAAAAAAAAALAA4ADwAAAAAAAAAMAA0ADwAAAAAAAAAMAA4ADwAAAAAAAAANAA0ADwAAAAAAAAANAA4ADwAAAAAAAAAOAA0ADwAAAAAAAAAOAA4ADwAAAAAAAAAPAA0ADwAAAAAAAAAPAA4ADwAAAAAAAAAQAA0ADwAAAAAAAAAQAA4ADwAAAAAAAAARAA0ADwAAAAAAAAARAA4ADwAAAAAAAAASAA0ADwAAAAAAAAASAA4ADwAAAAAAAAATAA0ADwAAAAAAAAATAA4ADwAAAAAAAAAUAA0ADwAAAAAAAAAUAA4ADwAAAAAAAAAVAA0ADwAAAAAAAAAVAA4ADwAAAAAAAAAWAA0ADwAAAAAAAAAWAA4ADwAAAAAAAAAXAA0ADwAAAAAAAAAXAA4ADwAAAAAAAAAYAA0ADwAAAAAAAAAYAA4ADwAAAAAAAAAZAA0ADwAAAAAAAAAZAA4ADwAAAAAAAAAaAA4ADwAAAAAAAAAaAA0ADwAAAAAAAAA=")
+tile_set = SubResource("TileSet_6afg6")
+
+[node name="Mario" type="Sprite2D" parent="."]
+position = Vector2(114, 400)
+texture = ExtResource("18_i42gt")
+
+[node name="Controls" parent="." instance=ExtResource("19_vtttd")]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -199.5
+offset_right = 200.5
+offset_bottom = 182.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 25
+
+[node name="SizeHBox" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Size" type="Label" parent="MarginContainer/VBoxContainer/SizeHBox"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "SIZE"
+label_settings = ExtResource("20_48oew")
+
+[node name="SizeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/SizeHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_icons/grabber = ExtResource("21_oa0b2")
+theme_override_icons/grabber_highlight = ExtResource("21_oa0b2")
+theme_override_icons/grabber_disabled = ExtResource("21_oa0b2")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_2y0ff")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_0trv8")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_oa0b2")
+min_value = 50.0
+max_value = 200.0
+value = 100.0
+rounded = true
+
+[node name="SizeValue" type="Label" parent="MarginContainer/VBoxContainer/SizeHBox"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("23_0trv8")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gu1wr")
+text = "100"
+label_settings = ExtResource("20_48oew")
+
+[node name="VisibleHBox" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Visible" type="Label" parent="MarginContainer/VBoxContainer/VisibleHBox"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "OPACITY"
+label_settings = ExtResource("20_48oew")
+
+[node name="VisibleSlider" type="HSlider" parent="MarginContainer/VBoxContainer/VisibleHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_icons/grabber = ExtResource("21_oa0b2")
+theme_override_icons/grabber_highlight = ExtResource("21_oa0b2")
+theme_override_icons/grabber_disabled = ExtResource("21_oa0b2")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_2y0ff")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_0trv8")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_oa0b2")
+value = 100.0
+rounded = true
+
+[node name="VisibleValue" type="Label" parent="MarginContainer/VBoxContainer/VisibleHBox"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("23_0trv8")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gu1wr")
+text = "100"
+label_settings = ExtResource("20_48oew")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 75
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LeftButton" type="TouchScreenButton" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Control"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_0trv8")
+action = "left"
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Control/LeftButton"]
+rotation = -1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_m65lj")
+
+[node name="Control2" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RightButton" type="TouchScreenButton" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Control2"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_oa0b2")
+action = "right"
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Control2/RightButton"]
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_m65lj")
+
+[node name="Control3" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="UpButton" type="TouchScreenButton" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Control3"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_gu1wr")
+action = "up"
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Control3/UpButton"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_m65lj")
+
+[node name="Control4" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DownButton" type="TouchScreenButton" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Control4"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_7i72v")
+action = "down"
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Control4/DownButton"]
+rotation = 3.14159
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_m65lj")
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxEmpty_mj3va")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Save" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("23_0trv8")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0trv8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_oa0b2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7i72v")
+toggle_mode = true
+action_mode = 0
+text = "SAVE"
+
+[node name="Default" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("23_0trv8")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0trv8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_oa0b2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7i72v")
+toggle_mode = true
+action_mode = 0
+text = "DEFAULT"
+
+[node name="Cancel" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("23_0trv8")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6ybxm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ctpo6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7i72v")
+toggle_mode = true
+action_mode = 0
+text = "CANCEL"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/SizeHBox/SizeSlider" to="." method="_on_size_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/VisibleHBox/VisibleSlider" to="." method="_on_visible_slider_value_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Control/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="released" from="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Control/LeftButton" to="." method="_on_left_button_released"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Control2/RightButton" to="." method="_on_right_button_pressed"]
+[connection signal="released" from="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Control2/RightButton" to="." method="_on_right_button_released"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Control3/UpButton" to="." method="_on_up_button_pressed"]
+[connection signal="released" from="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Control3/UpButton" to="." method="_on_up_button_released"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Control4/DownButton" to="." method="_on_down_button_pressed"]
+[connection signal="released" from="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/Control4/DownButton" to="." method="_on_down_button_released"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Default" to="." method="_on_default_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Cancel" to="." method="_on_cancel_pressed"]

@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://usnbhw1elg30"]
+
+[ext_resource type="Script" uid="uid://dc2s2r17oerb3" path="res://Scenes/coin_popped.gd" id="1_4s5yj"]
+[ext_resource type="Texture2D" uid="uid://b4pdpvy1v2403" path="res://files/images/coin_an0.png" id="1_liy7h"]
+[ext_resource type="Texture2D" uid="uid://dxl21s5yhmqja" path="res://files/images/coin_an1.png" id="2_4s5yj"]
+[ext_resource type="Texture2D" uid="uid://i510qqp7mjar" path="res://files/images/coin_an2.png" id="3_17n2q"]
+[ext_resource type="Texture2D" uid="uid://byoo7yxtgt5j6" path="res://files/images/coin_an3.png" id="4_dlx2x"]
+[ext_resource type="AudioStream" uid="uid://n0ub67w26l70" path="res://files/sounds/coin.wav" id="5_0kqh2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h6ran"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_liy7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4s5yj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_17n2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dlx2x")
+}],
+"loop": false,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="coin_popped" type="Node2D"]
+script = ExtResource("1_4s5yj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_h6ran")
+autoplay = "default"
+frame = 1
+frame_progress = 0.108907
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_0kqh2")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

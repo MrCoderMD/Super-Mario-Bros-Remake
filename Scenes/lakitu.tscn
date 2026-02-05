@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://bm3hkos32bh5w"]
+
+[ext_resource type="Script" uid="uid://2dwxd3t3jd8l" path="res://Scripts/lakitu.gd" id="1_w642j"]
+[ext_resource type="Texture2D" uid="uid://bp0casxyd81sh" path="res://files/images/lakito_0.png" id="2_e5eb5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxcmp"]
+size = Vector2(32, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qx01"]
+size = Vector2(32, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyjud"]
+size = Vector2(2, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_po6e4"]
+size = Vector2(2, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_it1cn"]
+size = Vector2(32, 1)
+
+[node name="Lakitu" type="CharacterBody2D"]
+collision_layer = 18
+collision_mask = 0
+script = ExtResource("1_w642j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_e5eb5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gxcmp")
+
+[node name="UpCollision" type="Area2D" parent="."]
+position = Vector2(0, -24.5)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpCollision"]
+shape = SubResource("RectangleShape2D_4qx01")
+
+[node name="LeftCollision" type="Area2D" parent="."]
+position = Vector2(-17, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollision"]
+shape = SubResource("RectangleShape2D_uyjud")
+
+[node name="RightCollision" type="Area2D" parent="."]
+position = Vector2(17, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightCollision"]
+shape = SubResource("RectangleShape2D_po6e4")
+
+[node name="DownCollision" type="Area2D" parent="."]
+position = Vector2(0, 24.5)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DownCollision"]
+shape = SubResource("RectangleShape2D_it1cn")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -41)
+gizmo_extents = 16.0
+
+[node name="SpikeyThrow" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="body_entered" from="UpCollision" to="." method="_on_up_collision_body_entered"]
+[connection signal="body_entered" from="LeftCollision" to="." method="_on_left_collision_body_entered"]
+[connection signal="body_entered" from="RightCollision" to="." method="_on_right_collision_body_entered"]
+[connection signal="body_entered" from="DownCollision" to="." method="_on_down_collision_body_entered"]
+[connection signal="timeout" from="SpikeyThrow" to="." method="_on_spikey_throw_timeout"]

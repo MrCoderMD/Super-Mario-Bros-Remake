@@ -1,0 +1,148 @@
+[gd_scene load_steps=18 format=3 uid="uid://c1lvinmxo53n"]
+
+[ext_resource type="Texture2D" uid="uid://ckrxgdwxv3bqj" path="res://files/images/bowser0.png" id="1_h1ixf"]
+[ext_resource type="Script" uid="uid://bncxrntywqdug" path="res://Scripts/bowser.gd" id="1_t2xuc"]
+[ext_resource type="Texture2D" uid="uid://cygylhuox0e0l" path="res://files/images/goombas2_0.png" id="2_bidpk"]
+[ext_resource type="Texture2D" uid="uid://xi46xr316in" path="res://files/images/bowser1.png" id="2_lh03c"]
+[ext_resource type="Texture2D" uid="uid://fpfr3uvs2j7c" path="res://files/images/koopa1_0.png" id="3_chn6e"]
+[ext_resource type="Texture2D" uid="uid://xf7dn0cttuhx" path="res://files/images/bowser2.png" id="3_t2xuc"]
+[ext_resource type="Texture2D" uid="uid://cegfbs6b6y67b" path="res://files/images/beetle2_1.png" id="4_41edf"]
+[ext_resource type="Texture2D" uid="uid://1sgaueifgsi7" path="res://files/images/bowser3.png" id="4_m6mc7"]
+[ext_resource type="Texture2D" uid="uid://du2i2yaggq6x2" path="res://files/images/lakito_1.png" id="5_6l8fq"]
+[ext_resource type="Texture2D" uid="uid://c0yistv50ba7" path="res://files/images/spikey0_0.png" id="6_kxp7k"]
+[ext_resource type="AudioStream" uid="uid://b8k44eepk3pqu" path="res://files/sounds/fire.wav" id="6_m6mc7"]
+[ext_resource type="Texture2D" uid="uid://bdvnvgri4g0r" path="res://files/images/squid1.png" id="7_bb7op"]
+[ext_resource type="Texture2D" uid="uid://d0ncrr0gr8kdt" path="res://files/images/hammerbro1_1.png" id="8_oj076"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lh03c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bidpk")
+}],
+"loop": false,
+"name": &"1-4",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_chn6e")
+}],
+"loop": false,
+"name": &"2-4",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_41edf")
+}],
+"loop": false,
+"name": &"3-4",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_6l8fq")
+}],
+"loop": false,
+"name": &"4-4",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_kxp7k")
+}],
+"loop": false,
+"name": &"5-4",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_bb7op")
+}],
+"loop": false,
+"name": &"6-4",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_oj076")
+}],
+"loop": false,
+"name": &"7-4",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_h1ixf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lh03c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_t2xuc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_m6mc7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2xuc"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m6mc7"]
+size = Vector2(2000, 480)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t41hi"]
+size = Vector2(66, 66)
+
+[node name="Bowser" type="CharacterBody2D"]
+collision_layer = 18
+collision_mask = 2
+script = ExtResource("1_t2xuc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lh03c")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_t2xuc")
+
+[node name="FireSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_m6mc7")
+
+[node name="DetectArea" type="Area2D" parent="."]
+position = Vector2(-1000, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea"]
+shape = SubResource("RectangleShape2D_m6mc7")
+
+[node name="FireTimer" type="Timer" parent="."]
+
+[node name="JumpTimer" type="Timer" parent="."]
+
+[node name="WalkTimer" type="Timer" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-32, -5)
+
+[node name="HammerMark" type="Marker2D" parent="."]
+position = Vector2(-16, -32)
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("RectangleShape2D_t41hi")
+
+[connection signal="body_entered" from="DetectArea" to="." method="_on_detect_area_body_entered"]
+[connection signal="timeout" from="FireTimer" to="." method="_on_fire_timer_timeout"]
+[connection signal="timeout" from="JumpTimer" to="." method="_on_jump_timer_timeout"]
+[connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]

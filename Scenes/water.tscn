@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cn6laofthlq6p"]
+
+[ext_resource type="Texture2D" uid="uid://bgrrkb2wswl7f" path="res://files/images/water_1.png" id="1_gf5bf"]
+[ext_resource type="Script" uid="uid://ccwx2y3nycv7q" path="res://Scripts/water.gd" id="1_qq3op"]
+[ext_resource type="Texture2D" uid="uid://b11mb2qobbwy6" path="res://files/images/water_1_1.png" id="2_qq3op"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bjixy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gf5bf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qq3op")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqihb"]
+size = Vector2(32, 32)
+
+[node name="Water" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_qq3op")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bjixy")
+autoplay = "default"
+frame_progress = 0.199928
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rqihb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

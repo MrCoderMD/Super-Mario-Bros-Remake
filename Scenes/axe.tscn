@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://ytjgjbfb875c"]
+
+[ext_resource type="Script" uid="uid://dukjcjb8lmb64" path="res://Scripts/axe.gd" id="1_2q7ty"]
+[ext_resource type="Texture2D" uid="uid://5ujxs05u5jlc" path="res://files/images/axe_0.png" id="1_6o4l1"]
+[ext_resource type="Texture2D" uid="uid://8p7dyr3wp6ar" path="res://files/images/axe_1.png" id="2_2q7ty"]
+[ext_resource type="Texture2D" uid="uid://d4nu0npjoka4o" path="res://files/images/axe_2.png" id="3_dd7ca"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rqofy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6o4l1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2q7ty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dd7ca")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dd7ca"]
+size = Vector2(32, 32)
+
+[node name="Axe" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_2q7ty")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rqofy")
+autoplay = "default"
+frame_progress = 0.754553
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dd7ca")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

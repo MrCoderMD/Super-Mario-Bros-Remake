@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://bt8hs85yc7ong"]
+
+[ext_resource type="Script" uid="uid://dnr2f8x6h5sim" path="res://Scripts/bullet_bill_canon.gd" id="1_boliu"]
+[ext_resource type="Texture2D" uid="uid://bpnhs6emju7w0" path="res://files/images/b_top.png" id="1_iq7di"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boliu"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvwaq"]
+size = Vector2(160, 96)
+
+[node name="BulletBillCanon" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_boliu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_iq7di")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_boliu")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-32, 0)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(32, 0)
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="IdleArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IdleArea"]
+shape = SubResource("RectangleShape2D_cvwaq")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
+[connection signal="body_entered" from="IdleArea" to="." method="_on_idle_area_body_entered"]
+[connection signal="body_exited" from="IdleArea" to="." method="_on_idle_area_body_exited"]
+[connection signal="screen_entered" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

@@ -1,0 +1,227 @@
+[gd_scene load_steps=44 format=4 uid="uid://bl8vj2kwxvs64"]
+
+[ext_resource type="Script" uid="uid://dgpoxluarxtd8" path="res://Scripts/main_menu.gd" id="1_ehtkc"]
+[ext_resource type="Texture2D" uid="uid://cymid328jhjg4" path="res://files/images/water_2.bmp" id="1_ujyyl"]
+[ext_resource type="Texture2D" uid="uid://besjpgp3jiy4m" path="res://files/images/bush_right.png" id="2_mkpwh"]
+[ext_resource type="Texture2D" uid="uid://cx8oxol4twcfp" path="res://files/images/bush_left.png" id="3_4nkqq"]
+[ext_resource type="Texture2D" uid="uid://802twxv52e1t" path="res://files/images/cloud_center_bot.png" id="4_ehtkc"]
+[ext_resource type="Texture2D" uid="uid://b876yrmdootjx" path="res://files/images/grass_center.png" id="5_6dk6o"]
+[ext_resource type="Texture2D" uid="uid://ddmttfpctx1im" path="res://files/images/grass_left.png" id="6_jr6u5"]
+[ext_resource type="Texture2D" uid="uid://dqx7fh7m3scyb" path="res://files/images/grass_right.png" id="7_6m47u"]
+[ext_resource type="Texture2D" uid="uid://8bmqiu6uyrmj" path="res://files/images/gnd_red_1.bmp" id="8_84iac"]
+[ext_resource type="Texture2D" uid="uid://drdgiftbjs787" path="res://files/images/bush_top.png" id="9_5n0dv"]
+[ext_resource type="Texture2D" uid="uid://dpwnj7h1utmd2" path="res://files/images/bush_center_0.bmp" id="10_ne6ao"]
+[ext_resource type="Texture2D" uid="uid://c55x3tk5pexly" path="res://files/images/bush_center_1.bmp" id="11_tt8ml"]
+[ext_resource type="Texture2D" uid="uid://dc02wo1j4h470" path="res://files/images/cloud_center_top.png" id="12_fmarx"]
+[ext_resource type="Texture2D" uid="uid://bjermh5j4xwsj" path="res://files/images/cloud_left_bot.png" id="13_hkdq0"]
+[ext_resource type="Texture2D" uid="uid://dd7ay8t6sbjtw" path="res://files/images/cloud_left_top.png" id="14_xcoo4"]
+[ext_resource type="Texture2D" uid="uid://clyva6epfljrv" path="res://files/images/cloud_right_bot.png" id="15_jw7lb"]
+[ext_resource type="Texture2D" uid="uid://ogilpqbw46n3" path="res://files/images/cloud_right_top.png" id="16_6vfk8"]
+[ext_resource type="Texture2D" uid="uid://sbegfbmqc4u6" path="res://files/images/mario/mario.png" id="17_1xund"]
+[ext_resource type="Texture2D" uid="uid://c5210880w1rio" path="res://files/images/super_mario_bros.bmp" id="18_msuys"]
+[ext_resource type="LabelSettings" uid="uid://cqyx68hy2ogik" path="res://ui.tres" id="19_4nkqq"]
+[ext_resource type="FontFile" uid="uid://7wavk5adg2q1" path="res://PressStart2P.ttf" id="21_ehtkc"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ehtkc"]
+texture = ExtResource("2_mkpwh")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6dk6o"]
+texture = ExtResource("3_4nkqq")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jr6u5"]
+texture = ExtResource("4_ehtkc")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6m47u"]
+texture = ExtResource("5_6dk6o")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_84iac"]
+texture = ExtResource("6_jr6u5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5n0dv"]
+texture = ExtResource("7_6m47u")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ne6ao"]
+texture = ExtResource("1_ujyyl")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tt8ml"]
+texture = ExtResource("8_84iac")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fmarx"]
+texture = ExtResource("9_5n0dv")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hkdq0"]
+texture = ExtResource("10_ne6ao")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xcoo4"]
+texture = ExtResource("11_tt8ml")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jw7lb"]
+texture = ExtResource("12_fmarx")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6vfk8"]
+texture = ExtResource("13_hkdq0")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1xund"]
+texture = ExtResource("14_xcoo4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_msuys"]
+texture = ExtResource("15_jw7lb")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aylim"]
+texture = ExtResource("16_6vfk8")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tni0p"]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_6dk6o")
+sources/0 = SubResource("TileSetAtlasSource_ehtkc")
+sources/2 = SubResource("TileSetAtlasSource_fmarx")
+sources/3 = SubResource("TileSetAtlasSource_hkdq0")
+sources/4 = SubResource("TileSetAtlasSource_xcoo4")
+sources/5 = SubResource("TileSetAtlasSource_jw7lb")
+sources/6 = SubResource("TileSetAtlasSource_6vfk8")
+sources/7 = SubResource("TileSetAtlasSource_1xund")
+sources/8 = SubResource("TileSetAtlasSource_msuys")
+sources/9 = SubResource("TileSetAtlasSource_aylim")
+sources/10 = SubResource("TileSetAtlasSource_jr6u5")
+sources/11 = SubResource("TileSetAtlasSource_6m47u")
+sources/12 = SubResource("TileSetAtlasSource_84iac")
+sources/13 = SubResource("TileSetAtlasSource_5n0dv")
+sources/14 = SubResource("TileSetAtlasSource_ne6ao")
+sources/15 = SubResource("TileSetAtlasSource_tt8ml")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6dk6o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ehtkc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jr6u5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6m47u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_84iac"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ehtkc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+offset_right = 853.0
+offset_bottom = 480.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.360784, 0.580392, 0.988235, 1)
+
+[node name="BackgroundTile" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAwAAQAAAAAAAAABAAsAAQAAAAAAAAAQAAwAAQAAAAAAAAAEAAwAAAAAAAAAAAADAAsAAAAAAAAAAAASAAwAAAAAAAAAAAACAAoAAgAAAAAAAAARAAsAAgAAAAAAAAABAAwAAwAAAAAAAAACAAsAAwAAAAAAAAACAAwABAAAAAAAAAADAAwAAwAAAAAAABARAAwAAwAAAAAAAAAUAAMACgAAAAAAAAAUAAIABQAAAAAAAAAIAAQABgAAAAAAAAATAAMABgAAAAAAAAATAAIABwAAAAAAAAAIAAMABwAAAAAAAAAVAAMACAAAAAAAAAAVAAIACQAAAAAAAAAKAAMACQAAAAAAAAAPAAwADQAAAAAAAAALAAwADAAAAAAAAAAMAAwACwAAAAAAAAANAAwACwAAAAAAAAAOAAwACwAAAAAAAAAYAAwACwAAAAAAAAAXAAwADAAAAAAAAAAZAAwADQAAAAAAAAAAAA0ADwAAAAAAAAAAAA4ADwAAAAAAAAABAA0ADwAAAAAAAAABAA4ADwAAAAAAAAACAA0ADwAAAAAAAAACAA4ADwAAAAAAAAADAA0ADwAAAAAAAAADAA4ADwAAAAAAAAAEAA0ADwAAAAAAAAAEAA4ADwAAAAAAAAAFAA0ADwAAAAAAAAAFAA4ADwAAAAAAAAAGAA0ADwAAAAAAAAAGAA4ADwAAAAAAAAAHAA0ADwAAAAAAAAAHAA4ADwAAAAAAAAAIAA0ADwAAAAAAAAAIAA4ADwAAAAAAAAAJAA0ADwAAAAAAAAAJAA4ADwAAAAAAAAAKAA0ADwAAAAAAAAAKAA4ADwAAAAAAAAALAA0ADwAAAAAAAAALAA4ADwAAAAAAAAAMAA0ADwAAAAAAAAAMAA4ADwAAAAAAAAANAA0ADwAAAAAAAAANAA4ADwAAAAAAAAAOAA0ADwAAAAAAAAAOAA4ADwAAAAAAAAAPAA0ADwAAAAAAAAAPAA4ADwAAAAAAAAAQAA0ADwAAAAAAAAAQAA4ADwAAAAAAAAARAA0ADwAAAAAAAAARAA4ADwAAAAAAAAASAA0ADwAAAAAAAAASAA4ADwAAAAAAAAATAA0ADwAAAAAAAAATAA4ADwAAAAAAAAAUAA0ADwAAAAAAAAAUAA4ADwAAAAAAAAAVAA0ADwAAAAAAAAAVAA4ADwAAAAAAAAAWAA0ADwAAAAAAAAAWAA4ADwAAAAAAAAAXAA0ADwAAAAAAAAAXAA4ADwAAAAAAAAAYAA0ADwAAAAAAAAAYAA4ADwAAAAAAAAAZAA0ADwAAAAAAAAAZAA4ADwAAAAAAAAAaAA4ADwAAAAAAAAAaAA0ADwAAAAAAAAA=")
+tile_set = SubResource("TileSet_tni0p")
+
+[node name="Mario" type="Sprite2D" parent="."]
+position = Vector2(114, 400)
+texture = ExtResource("17_1xund")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(276, 188)
+texture = ExtResource("18_msuys")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 45
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 250
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "A REMAKE OF THE CLASSIC SUPER MARIO BROS. BY MR.MD"
+label_settings = ExtResource("19_4nkqq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.933333, 0.933333, 0.933333, 1)
+theme_override_fonts/font = ExtResource("21_ehtkc")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6dk6o")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ehtkc")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jr6u5")
+text = "PLAY"
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.933333, 0.933333, 0.933333, 1)
+theme_override_fonts/font = ExtResource("21_ehtkc")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6dk6o")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6m47u")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jr6u5")
+text = "OPTIONS"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.933333, 0.933333, 0.933333, 1)
+theme_override_fonts/font = ExtResource("21_ehtkc")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6dk6o")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_84iac")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jr6u5")
+text = "QUIT"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]

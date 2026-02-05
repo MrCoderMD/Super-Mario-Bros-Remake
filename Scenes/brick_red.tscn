@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6tiexumf8jdl"]
+
+[ext_resource type="Texture2D" uid="uid://inks62fks253" path="res://files/images/brickred.bmp" id="1_eiy6u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54ka7"]
+size = Vector2(32, 32)
+
+[node name="BrickRed" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_eiy6u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_54ka7")

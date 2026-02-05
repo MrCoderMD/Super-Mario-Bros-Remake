@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://m52ps8uby6dx"]
+
+[ext_resource type="Script" uid="uid://d0tasyjivq25v" path="res://Scripts/bullet_bill.gd" id="1_u1h6n"]
+[ext_resource type="Texture2D" uid="uid://dr0xps6rgt36d" path="res://files/images/bulletbill.png" id="1_vxp80"]
+[ext_resource type="AudioStream" uid="uid://mafsxwsxdmeu" path="res://files/sounds/bulletbill.wav" id="3_17qpv"]
+[ext_resource type="AudioStream" uid="uid://d1mkd5ebr0na1" path="res://files/sounds/stomp.wav" id="4_08rir"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u1h6n"]
+size = Vector2(32, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_meofr"]
+size = Vector2(23, 1)
+
+[node name="BulletBill" type="Area2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_u1h6n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vxp80")
+offset = Vector2(0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_u1h6n")
+
+[node name="UpCollision" type="Area2D" parent="."]
+position = Vector2(0, -12.5)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpCollision"]
+shape = SubResource("RectangleShape2D_meofr")
+
+[node name="InitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_17qpv")
+
+[node name="DedSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_08rir")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="UpCollision" to="." method="_on_up_collision_body_entered"]

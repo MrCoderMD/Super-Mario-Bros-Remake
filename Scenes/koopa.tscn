@@ -1,0 +1,218 @@
+[gd_scene load_steps=23 format=3 uid="uid://bkvih37u1majc"]
+
+[ext_resource type="Texture2D" uid="uid://bqpulnexhc4ek" path="res://files/images/koopa_0.png" id="1_n0nud"]
+[ext_resource type="Script" uid="uid://q1il1tvwyg16" path="res://Scripts/koopa.gd" id="1_xjn5f"]
+[ext_resource type="Texture2D" uid="uid://bfggtxwtgqbpf" path="res://files/images/koopa_ded.png" id="2_0k7od"]
+[ext_resource type="Texture2D" uid="uid://2x54dsvnl8xn" path="res://files/images/koopa_1.png" id="2_qjbdu"]
+[ext_resource type="Texture2D" uid="uid://cgtgiravh6wrd" path="res://files/images/koopa1_2.png" id="3_fllxo"]
+[ext_resource type="Texture2D" uid="uid://domca2jpil3w3" path="res://files/images/koopa_2.png" id="3_tn0y7"]
+[ext_resource type="Texture2D" uid="uid://cd8pxlfmc0tgm" path="res://files/images/koopa1_3.png" id="4_hklel"]
+[ext_resource type="Texture2D" uid="uid://bvyynun0jbbsw" path="res://files/images/koopa_3.png" id="4_tm2q3"]
+[ext_resource type="Texture2D" uid="uid://b4j0cudni0800" path="res://files/images/koopa1_ded.png" id="5_xsnr2"]
+[ext_resource type="Texture2D" uid="uid://fpfr3uvs2j7c" path="res://files/images/koopa1_0.png" id="6_budt6"]
+[ext_resource type="Texture2D" uid="uid://c2s7yw8se7xr" path="res://files/images/koopa1_1.png" id="7_jnawu"]
+[ext_resource type="Texture2D" uid="uid://bbnvy7at5ifqj" path="res://files/images/koopa2_ded.png" id="8_8erqw"]
+[ext_resource type="Texture2D" uid="uid://bri8ltdydbsns" path="res://files/images/koopa2_2.png" id="8_fllxo"]
+[ext_resource type="Texture2D" uid="uid://7es07hqkniag" path="res://files/images/koopa2_0.png" id="9_12a2f"]
+[ext_resource type="Texture2D" uid="uid://yxarh68es4b0" path="res://files/images/koopa2_3.png" id="9_hklel"]
+[ext_resource type="Texture2D" uid="uid://csa6kqk5j5fks" path="res://files/images/koopa2_1.png" id="10_djfd5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xjn5f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_xsnr2")
+}],
+"loop": false,
+"name": &"castle_ded",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fllxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hklel")
+}],
+"loop": true,
+"name": &"castle_fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_budt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jnawu")
+}],
+"loop": true,
+"name": &"castle_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0k7od")
+}],
+"loop": false,
+"name": &"overworld_ded",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tn0y7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tm2q3")
+}],
+"loop": true,
+"name": &"overworld_fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_n0nud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qjbdu")
+}],
+"loop": true,
+"name": &"overworld_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_8erqw")
+}],
+"loop": false,
+"name": &"red_ded",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_fllxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hklel")
+}],
+"loop": true,
+"name": &"red_fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_12a2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_djfd5")
+}],
+"loop": true,
+"name": &"red_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_xsnr2")
+}],
+"loop": false,
+"name": &"underground_ded",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fllxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hklel")
+}],
+"loop": true,
+"name": &"underground_fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_budt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jnawu")
+}],
+"loop": true,
+"name": &"underground_walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8erqw"]
+size = Vector2(32, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jq0g"]
+size = Vector2(32, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsnr2"]
+size = Vector2(2, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_budt6"]
+size = Vector2(2, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnawu"]
+size = Vector2(32, 1)
+
+[node name="Koopa" type="CharacterBody2D"]
+collision_layer = 18
+collision_mask = 2
+script = ExtResource("1_xjn5f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7)
+sprite_frames = SubResource("SpriteFrames_xjn5f")
+animation = &"castle_walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_8erqw")
+
+[node name="UpCollision" type="Area2D" parent="."]
+position = Vector2(0, -30.5)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpCollision"]
+shape = SubResource("RectangleShape2D_6jq0g")
+
+[node name="LeftCollision" type="Area2D" parent="."]
+position = Vector2(-17, -7)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollision"]
+shape = SubResource("RectangleShape2D_xsnr2")
+
+[node name="RightCollision" type="Area2D" parent="."]
+position = Vector2(17, -7)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightCollision"]
+shape = SubResource("RectangleShape2D_budt6")
+
+[node name="DownCollision" type="Area2D" parent="."]
+position = Vector2(0, 16.5)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DownCollision"]
+shape = SubResource("RectangleShape2D_jnawu")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+rect = Rect2(-16, -30, 32, 46)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, 7)
+target_position = Vector2(-32, 32)
+collision_mask = 3
+hit_from_inside = true
+
+[connection signal="body_entered" from="UpCollision" to="." method="_on_up_collision_body_entered"]
+[connection signal="body_entered" from="LeftCollision" to="." method="_on_left_collision_body_entered"]
+[connection signal="body_entered" from="RightCollision" to="." method="_on_right_collision_body_entered"]
+[connection signal="body_entered" from="DownCollision" to="." method="_on_down_collision_body_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

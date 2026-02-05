@@ -1,0 +1,381 @@
+[gd_scene load_steps=51 format=3 uid="uid://hr0xdo6g37h4"]
+
+[ext_resource type="Script" uid="uid://ghvnaaxr35fm" path="res://Scripts/mario.gd" id="1_s0had"]
+[ext_resource type="Texture2D" uid="uid://c8vm2srhnufpi" path="res://files/images/mario/mario1_st.png" id="2_vysy0"]
+[ext_resource type="Texture2D" uid="uid://8006jjj2hyjg" path="res://files/images/mario/mario1_end1.png" id="3_38whf"]
+[ext_resource type="Texture2D" uid="uid://cp4d1f36ea056" path="res://files/images/mario/mario1_squat.png" id="3_88i4i"]
+[ext_resource type="Texture2D" uid="uid://bpux60wqiqb88" path="res://files/images/mario/mario1.png" id="3_cf8pe"]
+[ext_resource type="Texture2D" uid="uid://dfl1pw3f54e7o" path="res://files/images/mario/mario1_jump.png" id="4_58ey8"]
+[ext_resource type="Texture2D" uid="uid://hf5k2fkpoj2v" path="res://files/images/mario/mario1_end.png" id="4_qhw2k"]
+[ext_resource type="Texture2D" uid="uid://dv2ecalwqn2oq" path="res://files/images/mario/mario1_move0.png" id="5_2243w"]
+[ext_resource type="Texture2D" uid="uid://clo3n7fc0xbj6" path="res://files/images/mario/mario1_move1.png" id="6_n0p2f"]
+[ext_resource type="AudioStream" uid="uid://bf3ynvgjhtrqd" path="res://files/sounds/jump.wav" id="7_0ic7m"]
+[ext_resource type="Texture2D" uid="uid://dagn6tbbtnnrd" path="res://files/images/mario/mario1_move2.png" id="7_gkn0n"]
+[ext_resource type="Texture2D" uid="uid://cqypofhs4w77l" path="res://files/images/mario/mario1_underwater0.png" id="7_p2ma1"]
+[ext_resource type="Texture2D" uid="uid://dv5y1d555pybg" path="res://files/images/mario/mario1_underwater1.png" id="8_814gg"]
+[ext_resource type="Texture2D" uid="uid://cfd7hc5t0r02u" path="res://files/images/mario/mario2.png" id="8_y83j0"]
+[ext_resource type="Texture2D" uid="uid://dg18k1jukylmn" path="res://files/images/mario/mario2_jump.png" id="9_37lui"]
+[ext_resource type="Texture2D" uid="uid://bnct70y1y3x0h" path="res://files/images/mario/mario2_move0.png" id="10_rjccg"]
+[ext_resource type="Texture2D" uid="uid://b75spm11iwk1h" path="res://files/images/mario/mario2_move1.png" id="11_v4xhf"]
+[ext_resource type="Texture2D" uid="uid://b002l3pbg6a3" path="res://files/images/mario/mario2_st.png" id="12_2rc7i"]
+[ext_resource type="Texture2D" uid="uid://gbsv8j123hhd" path="res://files/images/mario/mario2_move2.png" id="12_hqpwc"]
+[ext_resource type="Texture2D" uid="uid://cjwo2h3ugr5ml" path="res://files/images/mario/mario_death.png" id="12_p2ma1"]
+[ext_resource type="Texture2D" uid="uid://de64veehnr7kv" path="res://files/images/mario/mario2_end1.png" id="13_88i4i"]
+[ext_resource type="Texture2D" uid="uid://dwc813bpd88j1" path="res://files/images/mario/mario_st.png" id="13_jupqv"]
+[ext_resource type="Texture2D" uid="uid://b70hlotlpmdhl" path="res://files/images/mario/mario2_end.png" id="14_4qhp5"]
+[ext_resource type="Texture2D" uid="uid://sbegfbmqc4u6" path="res://files/images/mario/mario.png" id="14_rwve6"]
+[ext_resource type="Texture2D" uid="uid://o4ned8svu2ii" path="res://files/images/mario/mario2_squat.png" id="15_4qhp5"]
+[ext_resource type="Texture2D" uid="uid://diedvxm6lttvw" path="res://files/images/mario/mario_jump.png" id="15_38whf"]
+[ext_resource type="Texture2D" uid="uid://bbbc3vc7j3wnl" path="res://files/images/mario/mario_move0.png" id="16_qhw2k"]
+[ext_resource type="Texture2D" uid="uid://cbkqubsovlp8n" path="res://files/images/mario/mario2_underwater0.png" id="17_bxf1k"]
+[ext_resource type="Texture2D" uid="uid://dg4yr7trhc88i" path="res://files/images/mario/mario_move1.png" id="17_p2ma1"]
+[ext_resource type="Texture2D" uid="uid://dj2p3u3sqo3hs" path="res://files/images/mario/mario2_underwater1.png" id="18_37uli"]
+[ext_resource type="Texture2D" uid="uid://0u58i1wbwley" path="res://files/images/mario/mario_move2.png" id="18_814gg"]
+[ext_resource type="Texture2D" uid="uid://dhelw2fyyg76w" path="res://files/images/mario/mario_end1.png" id="23_1u4en"]
+[ext_resource type="Texture2D" uid="uid://drjbd84hgfy6k" path="res://files/images/mario/mario_idle_throw.png" id="23_2rc7i"]
+[ext_resource type="Texture2D" uid="uid://bay6uhniibke5" path="res://files/images/mario/mario_lvlup.png" id="23_qhw2k"]
+[ext_resource type="Texture2D" uid="uid://cxf1b88qxcw7g" path="res://files/images/mario/mario_end.png" id="24_30ybf"]
+[ext_resource type="Texture2D" uid="uid://c3v3er7oxplkf" path="res://files/images/mario/mario_run_throw.png" id="25_814gg"]
+[ext_resource type="Texture2D" uid="uid://bu8ajyiii48t8" path="res://files/images/mario/mario_underwater0.png" id="27_wde4g"]
+[ext_resource type="Texture2D" uid="uid://3go77bvql22r" path="res://files/images/mario/mario_underwater1.png" id="28_ggv86"]
+[ext_resource type="AudioStream" uid="uid://n0ub67w26l70" path="res://files/sounds/coin.wav" id="32_rjccg"]
+[ext_resource type="AudioStream" uid="uid://bb4mb8lsuahbm" path="res://files/sounds/levelend.wav" id="34_hqpwc"]
+[ext_resource type="AudioStream" uid="uid://bq0yql037dntn" path="res://files/sounds/blockhit.wav" id="36_38whf"]
+[ext_resource type="AudioStream" uid="uid://bm0fdmuklbjge" path="res://files/sounds/blockbreak.wav" id="37_qhw2k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rc7i"]
+atlas = ExtResource("25_814gg")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88i4i"]
+atlas = ExtResource("25_814gg")
+region = Rect2(36, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qhp5"]
+atlas = ExtResource("25_814gg")
+region = Rect2(72, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxf1k"]
+atlas = ExtResource("25_814gg")
+region = Rect2(108, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37uli"]
+atlas = ExtResource("25_814gg")
+region = Rect2(144, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2rc7i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vysy0")
+}],
+"loop": false,
+"name": &"big_brake",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_88i4i")
+}],
+"loop": false,
+"name": &"big_crouch",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_38whf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qhw2k")
+}],
+"loop": true,
+"name": &"big_hang",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cf8pe")
+}],
+"loop": true,
+"name": &"big_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_58ey8")
+}],
+"loop": false,
+"name": &"big_jump",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_p2ma1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_814gg")
+}],
+"loop": true,
+"name": &"big_swim",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2243w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n0p2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gkn0n")
+}],
+"loop": true,
+"name": &"big_walk",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_p2ma1")
+}],
+"loop": true,
+"name": &"ded",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_2rc7i")
+}],
+"loop": false,
+"name": &"fiery_brake",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_4qhp5")
+}],
+"loop": false,
+"name": &"fiery_crouch",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_88i4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4qhp5")
+}],
+"loop": true,
+"name": &"fiery_hang",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_y83j0")
+}],
+"loop": false,
+"name": &"fiery_idle",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_37lui")
+}],
+"loop": false,
+"name": &"fiery_jump",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_bxf1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_37uli")
+}],
+"loop": true,
+"name": &"fiery_swim",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_rjccg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_v4xhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hqpwc")
+}],
+"loop": true,
+"name": &"fiery_walk",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cf8pe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y83j0")
+}],
+"loop": true,
+"name": &"fire_power_up",
+"speed": 7.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_2rc7i")
+}],
+"loop": true,
+"name": &"idle_throw",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_rwve6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_qhw2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cf8pe")
+}],
+"loop": true,
+"name": &"power_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rc7i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88i4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qhp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxf1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37uli")
+}],
+"loop": true,
+"name": &"run_throw",
+"speed": 20.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_jupqv")
+}],
+"loop": true,
+"name": &"smol_brake",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_1u4en")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_30ybf")
+}],
+"loop": true,
+"name": &"smol_hang",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_rwve6")
+}],
+"loop": false,
+"name": &"smol_idle",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_38whf")
+}],
+"loop": false,
+"name": &"smol_jump",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_wde4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ggv86")
+}],
+"loop": true,
+"name": &"smol_swim",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_qhw2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_p2ma1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_814gg")
+}],
+"loop": true,
+"name": &"smol_walk",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhuoa"]
+size = Vector2(22, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_37lui"]
+size = Vector2(24, 1)
+
+[node name="Mario" type="CharacterBody2D"]
+collision_layer = 6
+collision_mask = 10
+slide_on_ceiling = false
+platform_on_leave = 2
+safe_margin = 0.001
+script = ExtResource("1_s0had")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2rc7i")
+animation = &"smol_idle"
+autoplay = "smol_idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fhuoa")
+debug_color = Color(0.556406, 0.555941, 0.224464, 0.42)
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_0ic7m")
+
+[node name="LevelEnd" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("34_hqpwc")
+
+[node name="UpCollision" type="Area2D" parent="."]
+position = Vector2(0, -14.5)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpCollision"]
+shape = SubResource("RectangleShape2D_37lui")
+disabled = true
+
+[node name="CoinSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("32_rjccg")
+
+[node name="BlockHit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("36_38whf")
+
+[node name="BrickBreak" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("37_qhw2k")
+
+[node name="BubbleTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="body_entered" from="UpCollision" to="." method="_on_up_collision_body_entered"]
+[connection signal="timeout" from="BubbleTimer" to="." method="_on_bubble_timer_timeout"]

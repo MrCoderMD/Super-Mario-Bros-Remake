@@ -1,0 +1,81 @@
+[gd_scene load_steps=13 format=3 uid="uid://ckj7sj6a7awm8"]
+
+[ext_resource type="Script" uid="uid://b80vdpy4sfsfx" path="res://Scripts/fire_ball.gd" id="1_dmx0u"]
+[ext_resource type="Texture2D" uid="uid://diwf7rbsht618" path="res://files/images/fireball_0.png" id="2_6hg84"]
+[ext_resource type="Texture2D" uid="uid://dp0vogsoyhj4g" path="res://files/images/firework0.png" id="2_bykkd"]
+[ext_resource type="Texture2D" uid="uid://bg1m460cj0y72" path="res://files/images/firework1.png" id="3_3mblm"]
+[ext_resource type="Texture2D" uid="uid://bci4eif2kdrdv" path="res://files/images/fireball_1.png" id="3_w1ocp"]
+[ext_resource type="Texture2D" uid="uid://brdj686g48fla" path="res://files/images/fireball_2.png" id="4_bykkd"]
+[ext_resource type="Texture2D" uid="uid://bl1k7vilscaj8" path="res://files/images/firework2.png" id="4_ggqae"]
+[ext_resource type="Texture2D" uid="uid://wetph18mdhht" path="res://files/images/fireball_3.png" id="5_3mblm"]
+[ext_resource type="AudioStream" uid="uid://cvduyqu1mb5n3" path="res://files/sounds/shot.wav" id="9_3mblm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ggqae"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bykkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3mblm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ggqae")
+}],
+"loop": false,
+"name": &"blast",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6hg84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_w1ocp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bykkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3mblm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rc0uh"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mblm"]
+
+[node name="FireBall" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 3
+floor_block_on_wall = false
+script = ExtResource("1_dmx0u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ggqae")
+animation = &"blast"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rc0uh")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_3mblm")
+autoplay = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_3mblm")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

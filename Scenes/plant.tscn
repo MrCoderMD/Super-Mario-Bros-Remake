@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://khudxbcamq6e"]
+
+[ext_resource type="Script" uid="uid://bsmkoggjin7r6" path="res://Scripts/plant.gd" id="1_ujn7j"]
+[ext_resource type="Texture2D" uid="uid://vhhqbgvngoor" path="res://files/images/plant_1.png" id="1_wt21e"]
+[ext_resource type="Texture2D" uid="uid://bcwrjbsdwqqv7" path="res://files/images/plant_0.png" id="2_ujn7j"]
+[ext_resource type="Texture2D" uid="uid://cmb14ktfyeads" path="res://files/images/plant1_1.png" id="3_fl1so"]
+[ext_resource type="Texture2D" uid="uid://mkf75krs5g56" path="res://files/images/plant1_0.png" id="4_b4bfk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2oxh0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fl1so")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b4bfk")
+}],
+"loop": true,
+"name": &"castle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wt21e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ujn7j")
+}],
+"loop": true,
+"name": &"overworld",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fl1so")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b4bfk")
+}],
+"loop": true,
+"name": &"underground",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a36j5"]
+size = Vector2(32, 44)
+
+[node name="Plant" type="Area2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_ujn7j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, 10)
+sprite_frames = SubResource("SpriteFrames_2oxh0")
+animation = &"castle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 10)
+shape = SubResource("RectangleShape2D_a36j5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

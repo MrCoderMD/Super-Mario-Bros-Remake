@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn5mx1icq87ut"]
+
+[ext_resource type="Script" uid="uid://bu4p4og42b8fd" path="res://Scripts/ver_platform.gd" id="1_g0xfu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0xfu"]
+size = Vector2(96, 16)
+
+[node name="VerPlatform" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_g0xfu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g0xfu")

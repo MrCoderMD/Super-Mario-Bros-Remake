@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://diylcvx6g7cit"]
+
+[ext_resource type="Script" uid="uid://cdyx75qoo1xkq" path="res://Scripts/seesaw.gd" id="1_b2eg0"]
+[ext_resource type="Texture2D" uid="uid://cricok6loqnxd" path="res://files/images/seesaw_0.png" id="1_opi21"]
+[ext_resource type="Texture2D" uid="uid://b2hifpv8x0mkc" path="res://files/images/seesaw_3.png" id="2_b2eg0"]
+[ext_resource type="Texture2D" uid="uid://cb1odxmkcmcox" path="res://files/images/seesaw_2.png" id="3_fxrcc"]
+[ext_resource type="Texture2D" uid="uid://npwbxyoyoqm0" path="res://files/images/seesaw_1.png" id="4_f4o2x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2eg0"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxrcc"]
+size = Vector2(96, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4o2x"]
+size = Vector2(96, 20)
+
+[node name="Seesaw" type="Node2D"]
+script = ExtResource("1_b2eg0")
+
+[node name="FirstPivot" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="FirstPivot"]
+texture = ExtResource("1_opi21")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FirstPivot"]
+shape = SubResource("RectangleShape2D_b2eg0")
+
+[node name="SecondPivot" type="Area2D" parent="."]
+position = Vector2(128, 0)
+collision_layer = 0
+collision_mask = 8
+
+[node name="Sprite2D2" type="Sprite2D" parent="SecondPivot"]
+texture = ExtResource("4_f4o2x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SecondPivot"]
+shape = SubResource("RectangleShape2D_b2eg0")
+
+[node name="LeftVerRope" type="Sprite2D" parent="."]
+position = Vector2(0, 40)
+scale = Vector2(1, 3)
+texture = ExtResource("2_b2eg0")
+
+[node name="RightVerRope" type="Sprite2D" parent="."]
+position = Vector2(128, 56)
+scale = Vector2(1, 5)
+texture = ExtResource("2_b2eg0")
+
+[node name="HorizRope" type="Sprite2D" parent="."]
+position = Vector2(64, 0)
+scale = Vector2(3, 1)
+texture = ExtResource("3_fxrcc")
+
+[node name="Left" type="CharacterBody2D" parent="."]
+position = Vector2(0, 64)
+collision_layer = 10
+collision_mask = 0
+
+[node name="Sprites" type="Node2D" parent="Left"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+shape = SubResource("RectangleShape2D_fxrcc")
+
+[node name="LeftDetector" type="Area2D" parent="Left"]
+position = Vector2(0, -2)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left/LeftDetector"]
+shape = SubResource("RectangleShape2D_f4o2x")
+
+[node name="Right" type="CharacterBody2D" parent="."]
+position = Vector2(128, 96)
+collision_layer = 10
+collision_mask = 0
+
+[node name="Sprites" type="Node2D" parent="Right"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
+shape = SubResource("RectangleShape2D_fxrcc")
+
+[node name="RightDetector" type="Area2D" parent="Right"]
+position = Vector2(0, -2)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right/RightDetector"]
+shape = SubResource("RectangleShape2D_f4o2x")
+
+[connection signal="body_entered" from="FirstPivot" to="." method="_on_first_pivot_body_entered"]
+[connection signal="body_entered" from="SecondPivot" to="." method="_on_second_pivot_body_entered"]
+[connection signal="body_entered" from="Left/LeftDetector" to="." method="_on_left_detector_body_entered"]
+[connection signal="body_exited" from="Left/LeftDetector" to="." method="_on_left_detector_body_exited"]
+[connection signal="body_entered" from="Right/RightDetector" to="." method="_on_right_detector_body_entered"]
+[connection signal="body_exited" from="Right/RightDetector" to="." method="_on_right_detector_body_exited"]

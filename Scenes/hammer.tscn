@@ -1,0 +1,65 @@
+[gd_scene load_steps=12 format=3 uid="uid://g4krx47qvvnm"]
+
+[ext_resource type="Script" uid="uid://bf2lr0ha7c2qr" path="res://Scripts/hammer.gd" id="1_1a8ud"]
+[ext_resource type="Texture2D" uid="uid://hom6bmvo7gi1" path="res://files/images/hammer1_0.png" id="1_5yq65"]
+[ext_resource type="Texture2D" uid="uid://drvwgw6s5agv3" path="res://files/images/hammer1_1.png" id="2_1a8ud"]
+[ext_resource type="Texture2D" uid="uid://q036cuyacf4e" path="res://files/images/hammer1_2.png" id="3_hpk8e"]
+[ext_resource type="Texture2D" uid="uid://sy572nd4ak7u" path="res://files/images/hammer1_3.png" id="4_8htxu"]
+[ext_resource type="Texture2D" uid="uid://bapbvx0q87w3f" path="res://files/images/hammer_0.png" id="5_bwjsw"]
+[ext_resource type="Texture2D" uid="uid://d3ax1rry63nqp" path="res://files/images/hammer_1.png" id="6_81ddi"]
+[ext_resource type="Texture2D" uid="uid://dqxnju3xvoyus" path="res://files/images/hammer_2.png" id="7_lsxc6"]
+[ext_resource type="Texture2D" uid="uid://ck1g3wvuletm8" path="res://files/images/hammer_3.png" id="8_owpyv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d65cy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5yq65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1a8ud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hpk8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8htxu")
+}],
+"loop": true,
+"name": &"castle",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_bwjsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_81ddi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lsxc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_owpyv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xelx"]
+size = Vector2(8, 32)
+
+[node name="Hammer" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_1a8ud")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_d65cy")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8xelx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

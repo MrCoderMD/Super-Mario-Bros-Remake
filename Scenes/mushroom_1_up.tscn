@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkiekj0ok8n32"]
+
+[ext_resource type="Texture2D" uid="uid://supo4s1pmasv" path="res://files/images/mushroom_1up.png" id="1_4hv1v"]
+[ext_resource type="Script" uid="uid://bkb8ltmsu2kfb" path="res://Scripts/mushroom_1_up.gd" id="1_gu0it"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gu0it"]
+size = Vector2(30, 30)
+
+[node name="mushroom_1up" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+floor_block_on_wall = false
+script = ExtResource("1_gu0it")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("1_4hv1v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_gu0it")

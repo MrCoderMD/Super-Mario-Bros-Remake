@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=4 uid="uid://dislb0gpepohx"]
+
+[ext_resource type="Script" uid="uid://dtqb4pr31pby6" path="res://Scripts/level_4_4.gd" id="1_2mkiq"]
+[ext_resource type="AudioStream" uid="uid://b8gm2ey4o3mo5" path="res://files/sounds/castle.wav" id="1_7jnfy"]
+[ext_resource type="PackedScene" uid="uid://bir02loanl6" path="res://Scenes/controls.tscn" id="2_2mkiq"]
+[ext_resource type="TileSet" uid="uid://ijr2m6s1gjrk" path="res://castle_tiles.tres" id="3_3mnyo"]
+[ext_resource type="PackedScene" uid="uid://bcvb6mp5d7nan" path="res://Scenes/level_4_4_1.tscn" id="6_3mnyo"]
+[ext_resource type="PackedScene" uid="uid://hr0xdo6g37h4" path="res://Scenes/mario.tscn" id="7_lewfv"]
+[ext_resource type="PackedScene" uid="uid://cssgu1xlg7pyn" path="res://Scenes/ui.tscn" id="8_2y5j2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lewfv"]
+size = Vector2(10, 480)
+
+[node name="Level4-4" type="Node2D"]
+script = ExtResource("1_2mkiq")
+
+[node name="CameraFollower" type="Node2D" parent="."]
+position = Vector2(425.5, 240)
+
+[node name="BgMusic" type="AudioStreamPlayer2D" parent="CameraFollower"]
+position = Vector2(-426.5, -240)
+stream = ExtResource("1_7jnfy")
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="CameraFollower"]
+
+[node name="CameraBorder" type="StaticBody2D" parent="CameraFollower"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="LeftBorder" type="CollisionShape2D" parent="CameraFollower/CameraBorder"]
+position = Vector2(-426.5, 0)
+shape = SubResource("RectangleShape2D_lewfv")
+
+[node name="Controls" parent="CameraFollower" instance=ExtResource("2_2mkiq")]
+process_mode = 3
+position = Vector2(-425.5, -240)
+
+[node name="ForegroundTile" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAANAAoAAQAAAAAAAAANAAsAAQAAAAAAAAANAAwAAQAAAAAAAAANAA0AAQAAAAAAAAANAA4AAQAAAAAAAAAJAAoAAQAAAAAAAAAJAAsAAQAAAAAAAAAJAAwAAQAAAAAAAAAJAA0AAQAAAAAAAAAJAA4AAQAAAAAAAAAKAAoAAQAAAAAAAAAKAAsAAQAAAAAAAAAKAAwAAQAAAAAAAAAKAA0AAQAAAAAAAAAKAA4AAQAAAAAAAAAAAAoAAQAAAAAAAAAAAAsAAQAAAAAAAAAAAAwAAQAAAAAAAAAAAA0AAQAAAAAAAAAAAA4AAQAAAAAAAAABAAoAAQAAAAAAAAABAAsAAQAAAAAAAAABAAwAAQAAAAAAAAABAA0AAQAAAAAAAAABAA4AAQAAAAAAAAACAAoAAQAAAAAAAAACAAsAAQAAAAAAAAACAAwAAQAAAAAAAAACAA0AAQAAAAAAAAACAA4AAQAAAAAAAAADAAoAAQAAAAAAAAADAAsAAQAAAAAAAAADAAwAAQAAAAAAAAADAA0AAQAAAAAAAAADAA4AAQAAAAAAAAAEAAoAAQAAAAAAAAAEAAsAAQAAAAAAAAAEAAwAAQAAAAAAAAAEAA0AAQAAAAAAAAAEAA4AAQAAAAAAAAAFAAoAAQAAAAAAAAAFAAsAAQAAAAAAAAAFAAwAAQAAAAAAAAAFAA0AAQAAAAAAAAAFAA4AAQAAAAAAAAAGAAoAAQAAAAAAAAAGAAsAAQAAAAAAAAAGAAwAAQAAAAAAAAAGAA0AAQAAAAAAAAAGAA4AAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAQAAQAAAAAAAAABAAIAAQAAAAAAAAABAAMAAQAAAAAAAAABAAQAAQAAAAAAAAACAAIAAQAAAAAAAAACAAMAAQAAAAAAAAACAAQAAQAAAAAAAAADAAIAAQAAAAAAAAADAAMAAQAAAAAAAAADAAQAAQAAAAAAAAAEAAIAAQAAAAAAAAAEAAMAAQAAAAAAAAAEAAQAAQAAAAAAAAAFAAIAAQAAAAAAAAAFAAMAAQAAAAAAAAAFAAQAAQAAAAAAAAAGAAIAAQAAAAAAAAAHAAIAAQAAAAAAAAAIAAIAAQAAAAAAAAAJAAIAAQAAAAAAAAAKAAIAAQAAAAAAAAALAAIAAQAAAAAAAAAMAAIAAQAAAAAAAAANAAIAAQAAAAAAAAAAAAcAAQAAAAAAAAAAAAgAAQAAAAAAAAAAAAkAAQAAAAAAAAABAAcAAQAAAAAAAAABAAgAAQAAAAAAAAABAAkAAQAAAAAAAAACAAcAAQAAAAAAAAACAAgAAQAAAAAAAAACAAkAAQAAAAAAAAADAAgAAQAAAAAAAAADAAkAAQAAAAAAAAAEAAkAAQAAAAAAAAAHAA0AAgAAAAAAAAAIAA0AAgAAAAAAAAALAA0AAgAAAAAAAAAMAA0AAgAAAAAAAAAHAA4ABQAAAAAAAAAIAA4ABQAAAAAAAAALAA4ABQAAAAAAAAAMAA4ABQAAAAAAAAA=")
+tile_set = ExtResource("3_3mnyo")
+
+[node name="Level4-4-1" parent="." instance=ExtResource("6_3mnyo")]
+position = Vector2(448, 0)
+
+[node name="Mario" parent="." node_paths=PackedStringArray("block_layer") instance=ExtResource("7_lewfv")]
+position = Vector2(80, 208)
+block_layer = NodePath("../ForegroundTile")
+
+[node name="LevelTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="UI" parent="." instance=ExtResource("8_2y5j2")]
+
+[connection signal="finished" from="CameraFollower/BgMusic" to="." method="_on_bg_music_finished"]
+[connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
